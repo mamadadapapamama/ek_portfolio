@@ -1,0 +1,57 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+---
+
+<section id="approach" class="max-w-6xl mx-auto px-4 py-20">
+  <ScrollReveal client:load delay={0.1}>
+    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">My approach</h2>
+  </ScrollReveal>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <ScrollReveal client:load delay={0.2} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:brand-react" class="w-6 h-6 text-gray-900" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Alignment</h3>
+        <p class="text-gray-600">
+          Being crystal clear about your vision and user needs first.</p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:load delay={0.3} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon
+            name="tabler:brand-framer-motion"
+            class="w-6 h-6 text-gray-900"
+          />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Craftmanship</h3>
+        <p class="text-gray-600">
+          Creating the ideal user experience with a designer's eye.</p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal client:load delay={0.4} scale={true}>
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+      >
+        <div
+          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+        >
+          <Icon name="tabler:brand-tailwind" class="w-6 h-6 text-gray-900" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Experiment</h3>
+        <p class="text-gray-600">
+          Build and test with your v1 fast, learn early and iterate fast.</p>
+      </div>
+    </ScrollReveal>    
+  </div>
+</section>

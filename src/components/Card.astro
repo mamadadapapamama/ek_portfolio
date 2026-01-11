@@ -1,0 +1,59 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import Badge from "./Badge.astro";
+
+interface Props {
+  image?: string;
+  imageAlt?: string;
+  label?: string | string[];
+  title: string;
+  description?: string;
+  stack?: string;
+  href?: string;
+  delay?: number;
+}
+
+const { image, imageAlt, label, title, description, stack, href, delay = 0.2 } = Astro.props;
+
+const labels = Array.isArray(label) ? label : label ? [label] : [];
+const variants: ("default" | "primary" | "secondary")[] = ["default", "primary", "secondary"];
+---
+
+<ScrollReveal client:load delay={delay} scale={true}>
+  <div class="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow overflow-hidden">
+    {image && (
+      <img 
+        src={image} 
+        alt={imageAlt || title}
+        class="w-full h-48 object-cover"
+      />
+    )}
+    <div class="p-6">
+      {labels.length > 0 && (
+        <div class="flex items-center gap-2 mb-2">
+          {labels.map((l, index) => (
+            <Badge text={l} variant={variants[index % variants.length]} />
+          ))}
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+      )}
+    <p class="text-gray-600 mb-4">{description}</p>
+    {stack && (
+      <div>
+        <strong class="text-gray-900">Stack</strong>
+        <p class="text-gray-600 text-sm mt-1">{stack}</p>
+      </div>
+    )}
+    {href && (
+      <a 
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-block px-4 py-2 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+      >
+        learn more
+      </a>
+    )}
+    </div>
+  </div>
+</ScrollReveal>

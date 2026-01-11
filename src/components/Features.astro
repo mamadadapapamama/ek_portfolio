@@ -1,57 +1,47 @@
 ---
 import ScrollReveal from "./ScrollReveal.tsx";
-import { Icon } from "astro-icon/components";
+import Card from "./Card.astro";
+import Approach from "./Approach.astro";
+import pikabookImage from "../assets/index_1_pikabook.png";
+import jejuWaldorfKinderImage from "../assets/index_2_waldorf.png";
+import yunsoulEnVacancesImage from "../assets/index_3_yunsoul.png";   
 ---
-
-<section id="features" class="max-w-6xl mx-auto px-4 py-20">
+<section id="projects" class="max-w-6xl mx-auto px-4 py-20">
   <ScrollReveal client:load delay={0.1}>
-    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">My approach</h2>
+    <h2 class="text-4xl font-bold text-gray-900 text-center mb-20">Projects I design & build</h2>
   </ScrollReveal>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <ScrollReveal client:load delay={0.2} scale={true}>
-      <div
-        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-        >
-          <Icon name="tabler:brand-react" class="w-6 h-6 text-gray-900" />
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Alignment</h3>
-        <p class="text-gray-600">
-          Being crystal clear about your vision and user needs first.</p>
-      </div>
-    </ScrollReveal>
-    <ScrollReveal client:load delay={0.3} scale={true}>
-      <div
-        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-        >
-          <Icon
-            name="tabler:brand-framer-motion"
-            class="w-6 h-6 text-gray-900"
-          />
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Craftmanship</h3>
-        <p class="text-gray-600">
-          Creating the ideal user experience with a designer’s eye.</p>
-      </div>
-    </ScrollReveal>
-    <ScrollReveal client:load delay={0.4} scale={true}>
-      <div
-        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
-      >
-        <div
-          class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-        >
-          <Icon name="tabler:brand-tailwind" class="w-6 h-6 text-gray-900" />
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Experiment</h3>
-        <p class="text-gray-600">
-          Build and test with your v1 fast, learn early and iterate fast.</p>
-      </div>
-    </ScrollReveal>    
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <Card
+      image={pikabookImage.src}
+      imageAlt="Pikabook mobile app"
+      label={["iOS", "Web"]}
+      title="AI learning companion"
+      description="Pikabook turns Chinese book images into smart learning notes, enables pronunciation practice, and generates smart flashcards for memorization."
+      stack="Cursor, Firebase, Google Cloud APIs, Github pages, LLMs."
+      href="https://apps.apple.com/sg/app/pikabook/id6745157690/"
+      delay={0.2}
+    />
+    <Card
+      image={jejuWaldorfKinderImage.src}
+      imageAlt="Jeju Waldorf Kinder Website"
+      label={["Web"]}
+      title="Kindergarten Website wtih CMS"
+      description="Jeju waldorf kindergarten website for teachers to securely and easily manage contents via CMS."
+      stack="Astro, Decap CMS, Tailwind CSS, Netlify"
+      href="https://chipper-lebkuchen-cc3872.netlify.app/"
+      delay={0.2}
+    />
+    <Card
+      image={yunsoulEnVacancesImage.src}
+      imageAlt="YunSoul en vacances website"
+      label={[ "Web"]}
+      title="Holiday rental house website"
+      description="Website for a holiday rental house in South Korea using Notion."
+      stack="Notion, Cloudflare"
+      href="https://yunsoul.notion.site/YunSoul-en-vacances-19d1a8f8717f80a98ff4dd468e9cd492"
+      delay={0.2}
+    />
   </div>
 </section>
+
+<Approach />
