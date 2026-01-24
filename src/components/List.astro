@@ -41,18 +41,17 @@ const items: ListItemProps[] = [
 
 <section id="features" class="max-w-6xl mx-auto px-4 py-10">
   <ScrollReveal client:load delay={0.1}>
-    <h2 class="text-4xl font-bold text-gray-900 text-center">My Toolkit for building V1</h2>
+    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">My Toolkit for building V1</h2>
   </ScrollReveal>
   
-  <div class="prose prose-lg max-w-none mx-auto text-center">
-    <ScrollReveal client:load delay={0.2}>
-      <ul class="inline-block text-left">
-        {items.map((item) => (
-          <li>
-            <Badge text={item.title} /> - {item.description}
-          </li>
-        ))}
-      </ul>
-    </ScrollReveal>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+    {items.map((item, index) => (
+      <ScrollReveal client:load delay={0.1 + index * 0.1} scale={true}>
+        <div class="p-4 border border-gray-200 rounded-lg">
+          <Badge text={item.title} />
+          <p class="text-gray-600 text-sm mt-2">{item.description}</p>
+        </div>
+      </ScrollReveal>
+    ))}
   </div>
 </section>
