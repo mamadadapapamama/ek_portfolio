@@ -39,7 +39,7 @@
 
 .hero__sub { margin-top: clamp(30px, 4vw, 52px); }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .hero .display {
     font-size: clamp(29px, 5.35vw, 78px);
   }
@@ -183,19 +183,61 @@
   line-height: 1.4;
 }
 
+@media (max-width: 960px) {
+  .exp__grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border: none;
+    background: none;
+    gap: 0;
+  }
+
+  .exp__cell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+  }
+
+  .exp__cell:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .exp__logo {
+    height: 24px;
+    max-width: min(200px, 100%);
+    width: auto;
+  }
+
+  .exp__logo--wide {
+    height: 26px;
+    max-width: min(168px, 100%);
+  }
+
+  .exp__logo img {
+    object-position: left center;
+  }
+
+  .exp__role {
+    text-align: left;
+    max-width: none;
+  }
+
+  .exp__role br {
+    display: none;
+  }
+}
+
 @media (max-width: 880px) {
   .hero__grid { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 48px); }
   .hero__portrait { width: 100%; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .kit__grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 700px) {
-  .exp__grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 420px) {
-  .exp__grid { grid-template-columns: repeat(2, 1fr); }
-}

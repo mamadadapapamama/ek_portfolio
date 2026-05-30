@@ -12,9 +12,6 @@
 .nav.is-scrolled { border-bottom-color: var(--line); }
 
 .nav__inner {
-  max-width: var(--maxw);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
