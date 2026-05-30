@@ -109,7 +109,7 @@
 .wr-post-head h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(42px, 8vw, 96px);
+  font-size: clamp(60px, 8vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin: 0;
