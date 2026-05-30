@@ -6,12 +6,17 @@ function esc(value) {
     .replace(/"/g, "&quot;");
 }
 
-function slugify(value) {
-  return String(value ?? "")
+function slugify(value, fallbackId = "") {
+  const slug = String(value ?? "")
     .trim()
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+
+  if (slug) return slug;
+  if (!fallbackId) return "";
+
+  return fallbackId.replace(/-/g, "").slice(0, 12);
 }
 
 function richText(items) {

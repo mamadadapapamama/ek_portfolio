@@ -161,7 +161,7 @@ async function fetchPosts(notion, databaseId) {
       if (!title) continue;
 
       const customSlug = getProperty(page, PROP.slug);
-      const slug = slugify(customSlug || title);
+      const slug = slugify(customSlug || title, page.id);
       const date = getProperty(page, PROP.date);
       const summary = getProperty(page, PROP.summary);
       const coverFiles = getProperty(page, PROP.cover) || [];
@@ -260,6 +260,7 @@ async function build() {
 
   if (!apiKey || !databaseId) {
     console.warn("NOTION_API_KEY or NOTION_DATABASE_ID missing — writing pages skipped.");
+    console.warn("Add both env vars in Vercel → Project → Settings → Environment Variables, then Redeploy.");
     emptyWritingSite();
     return;
   }
