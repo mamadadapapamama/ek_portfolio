@@ -6,7 +6,7 @@ Posts are written in Notion and published to `ekkim.work/writing` at build time.
 
 1. Open [notion.so/my-integrations](https://www.notion.so/my-integrations)
 2. **New integration** → name it e.g. `ekkim-writing`
-3. Copy the **Internal Integration Secret** → this is `NOTION_API_KEY`
+3. Copy the **Access token** from Configuration (`ntn_...`) → this is `NOTION_API_KEY`
 
 ## 2) Create the Writing database
 
@@ -14,12 +14,12 @@ Create a full-page database in Notion with these properties:
 
 | Property | Type | Required | Notes |
 |----------|------|----------|-------|
-| **Title** | Title | ✅ | Post title |
-| **Date** | Date | ✅ | Shown on index + post header |
-| **Published** | Checkbox | ✅ | Only checked posts go live |
-| **Summary** | Text | optional | Short blurb on index page |
-| **Slug** | Text | optional | URL slug (`my-post`). Auto-generated from title if empty |
-| **Cover** | Files & media | optional | Cover image on index + post |
+| **title** | Title | ✅ | Post title |
+| **date** | Date | ✅ | Shown on index + post header |
+| **published** | Checkbox | ✅ | Only checked posts go live |
+| **summary** | Text | optional | Short blurb on index page |
+| **slug** | Text | optional | URL slug (`my-post`). Auto-generated from title if empty |
+| **cover** | Files & media | optional | Cover image on index + post |
 
 Share the database with your integration:
 

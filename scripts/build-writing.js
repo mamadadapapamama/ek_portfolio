@@ -34,12 +34,12 @@ function loadEnvFile() {
 loadEnvFile();
 
 const PROP = {
-  title: process.env.NOTION_PROP_TITLE || "Title",
-  slug: process.env.NOTION_PROP_SLUG || "Slug",
-  date: process.env.NOTION_PROP_DATE || "Date",
-  published: process.env.NOTION_PROP_PUBLISHED || "Published",
-  summary: process.env.NOTION_PROP_SUMMARY || "Summary",
-  cover: process.env.NOTION_PROP_COVER || "Cover",
+  title: process.env.NOTION_PROP_TITLE || "title",
+  slug: process.env.NOTION_PROP_SLUG || "slug",
+  date: process.env.NOTION_PROP_DATE || "date",
+  published: process.env.NOTION_PROP_PUBLISHED || "published",
+  summary: process.env.NOTION_PROP_SUMMARY || "summary",
+  cover: process.env.NOTION_PROP_COVER || "cover",
 };
 
 function navLinks(basePath = "") {
