@@ -154,6 +154,8 @@ function validateDatabaseId(id) {
   return normalized;
 }
 
+async function fetchPosts(notion, rawDatabaseId) {
+  const databaseId = validateDatabaseId(rawDatabaseId);
   const posts = [];
   let cursor;
 
