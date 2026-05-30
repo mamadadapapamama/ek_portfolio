@@ -140,7 +140,20 @@ function emptyWritingSite() {
   );
 }
 
-async function fetchPosts(notion, databaseId) {
+function normalizeNotionId(id) {
+  return String(id || "").replace(/-/g, "").trim();
+}
+
+function validateDatabaseId(id) {
+  const normalized = normalizeNotionId(id);
+  if (normalized.length !== 32) {
+    throw new Error(
+      `NOTION_DATABASE_ID must be 32 characters (got ${normalized.length}). Copy the full ID from the database page URL, not the shorter data source ID.`,
+    );
+  }
+  return normalized;
+}
+
   const posts = [];
   let cursor;
 

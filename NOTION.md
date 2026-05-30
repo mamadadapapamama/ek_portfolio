@@ -25,12 +25,15 @@ Share the database with your integration:
 
 - Open the database → `···` → **Connections** → add `ekkim-writing`
 
-Copy the database ID from the URL:
+Copy the database ID from the database **page URL** (`app.notion.com/p/...`), **not** the separate "data source" ID shown elsewhere in Notion.
 
 ```
-https://www.notion.so/yourworkspace/DATABASE_ID?v=...
-                                      ^^^^^^^^^^^
+https://app.notion.com/p/3707cc5f68c6807f8ebae2b8f4335e62?v=...
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        NOTION_DATABASE_ID (32 characters)
 ```
+
+Use the **full** 32-character ID. A missing first character (for example `707cc5f...` instead of `3707cc5f...`) causes `object_not_found` on Vercel.
 
 ## 3) Write a post
 
