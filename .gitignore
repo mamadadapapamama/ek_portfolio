@@ -4,6 +4,10 @@ data/
 .DS_Store
 portfolio.zip
 .git-setup/
+.env
 .thumbnail
 portfolio-byclaude/uploads/
 portfolio-byclaude/.thumbnail
+portfolio-byclaude/writing.html
+portfolio-byclaude/writing/
+portfolio-byclaude/assets/writing/

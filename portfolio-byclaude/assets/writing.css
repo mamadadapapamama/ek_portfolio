@@ -1,0 +1,244 @@
+/* ============================================================
+   Writing — index + post pages (generated from Notion)
+   ============================================================ */
+
+.wr-index-hero {
+  padding: clamp(36px, 6vw, 80px) 0 clamp(28px, 4vw, 48px);
+}
+
+.wr-list-page {
+  padding-bottom: clamp(64px, 9vw, 120px);
+}
+
+.wr-item {
+  display: grid;
+  grid-template-columns: 160px 1.2fr 220px;
+  gap: clamp(18px, 3vw, 40px);
+  align-items: start;
+  border-top: 1px solid var(--line);
+  padding: clamp(26px, 4vw, 42px) 0;
+  transition: color .3s var(--ease);
+}
+
+.wr-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .wr-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.wr-item:hover h2 {
+  color: var(--accent);
+}
+
+.wr-date {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  padding-top: 8px;
+}
+
+.wr-item h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px;
+  transition: color .3s var(--ease);
+}
+
+.wr-item p {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.wr-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.wr-more .arr {
+  transition: transform .3s var(--ease);
+}
+
+.wr-item:hover .wr-more .arr {
+  transform: translate(4px, -4px);
+}
+
+.wr-item-cover {
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.wr-item-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wr-empty {
+  padding: 48px 0 96px;
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+
+/* post page */
+.wr-post {
+  padding-bottom: clamp(72px, 10vw, 140px);
+}
+
+.wr-post-head {
+  padding: clamp(18px, 3vw, 36px) 0 clamp(28px, 4vw, 48px);
+  max-width: 820px;
+}
+
+.wr-post-head h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(42px, 8vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.wr-deck {
+  font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 42ch;
+  margin: clamp(22px, 3vw, 32px) 0 0;
+}
+
+.wr-cover {
+  margin: 0 0 clamp(34px, 5vw, 56px);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.wr-cover img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+}
+
+.wr-content {
+  max-width: 680px;
+  font-size: clamp(18px, 1.9vw, 21px);
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.wr-content > *:first-child {
+  margin-top: 0;
+}
+
+.wr-content p,
+.wr-content ul,
+.wr-content ol,
+.wr-content blockquote,
+.wr-content pre,
+.wr-content figure,
+.wr-content aside {
+  margin: 0 0 1.2em;
+}
+
+.wr-content h2,
+.wr-content h3,
+.wr-content h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 1.6em 0 0.6em;
+}
+
+.wr-content h2 { font-size: clamp(30px, 4vw, 44px); }
+.wr-content h3 { font-size: clamp(24px, 3vw, 34px); }
+.wr-content h4 { font-size: clamp(20px, 2.4vw, 26px); }
+
+.wr-content blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1em;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 1.15em;
+}
+
+.wr-content pre {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+
+.wr-content code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+}
+
+.wr-content .wr-list {
+  padding-left: 1.2em;
+}
+
+.wr-content .wr-list li {
+  margin-bottom: 0.5em;
+}
+
+.wr-figure img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.wr-figure figcaption {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.wr-callout {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px 18px;
+}
+
+.wr-bookmark a,
+.wr-video a,
+.wr-embed a {
+  color: var(--accent-ink);
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+}
+
+.wr-content hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2em 0;
+}
+
+.wr-content a {
+  color: var(--accent-ink);
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+}
+
+.wr-content a:hover {
+  color: var(--accent);
+}
