@@ -16,6 +16,23 @@ const SITE_DIR = path.join(ROOT, "portfolio-byclaude");
 const WRITING_DIR = path.join(SITE_DIR, "writing");
 const MEDIA_DIR = path.join(SITE_DIR, "assets", "writing");
 
+function loadEnvFile() {
+  const envPath = path.join(ROOT, ".env");
+  if (!fs.existsSync(envPath)) return;
+
+  for (const line of fs.readFileSync(envPath, "utf8").split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const separator = trimmed.indexOf("=");
+    if (separator === -1) continue;
+    const key = trimmed.slice(0, separator).trim();
+    const value = trimmed.slice(separator + 1).trim();
+    if (!process.env[key]) process.env[key] = value;
+  }
+}
+
+loadEnvFile();
+
 const PROP = {
   title: process.env.NOTION_PROP_TITLE || "Title",
   slug: process.env.NOTION_PROP_SLUG || "Slug",
@@ -26,13 +43,13 @@ const PROP = {
 };
 
 function navLinks(basePath = "") {
+  const workHref = basePath ? `${basePath}index.html#work` : "index.html#work";
   return `
 <nav class="nav">
   <a class="brand" href="${basePath}index.html">EK<span class="dot"></span></a>
   <div class="links">
-    <a href="${basePath}index.html#work">Work</a>
+    <a href="${workHref}">Work</a>
     <a href="${basePath}writing.html">Writing</a>
-    <a href="${basePath}about.html">About</a>
     <a href="mailto:eunkyung.ek.kim@gmail.com" class="cta">Contact</a>
   </div>
 </nav>`;
