@@ -4,19 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Waldorf Kinder — EK</title>
-<link rel="stylesheet" href="assets/style.css" />
-<link rel="stylesheet" href="assets/case.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
-<nav class="nav">
-  <a class="brand" href="index.html">EK<span class="dot"></span></a>
-  <div class="links">
-    <a href="index.html#work">Work</a>
-    <a href="writing.html">Writing</a>
-    <a href="mailto:eunkyung.ek.kim@gmail.com" class="cta">Contact</a>
-  </div>
-</nav>
+<div data-site-nav data-work-href="index.html#work"></div>
 
 <main class="wrap" data-screen-label="Waldorf">
   <a class="cs-back" href="index.html#work"><span class="arr">←</span> All work</a>
@@ -126,25 +118,9 @@
   </a>
 </section>
 
-<footer class="foot">
-  <div class="wrap">
-    <span class="eyebrow" data-reveal style="color: color-mix(in oklab, var(--paper) 60%, transparent)">Need a site like this?</span>
-    <p class="big" data-reveal data-delay="1">
-      <a href="mailto:eunkyung.ek.kim@gmail.com">Let's make it<br />real <span class="arr">↗</span></a>
-    </p>
-    <div class="meta">
-      <span>© <span data-year>2026</span> Eunkyung (EK) Kim</span>
-      <div class="social">
-        <a href="mailto:eunkyung.ek.kim@gmail.com">Email</a>
-        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-        <a href="index.html#work">Work</a>
-      </div>
-      <span>Idea → v1</span>
-    </div>
-  </div>
-</footer>
+<div data-site-footer></div>
 
-<script src="assets/image-slot.js"></script>
-<script src="assets/main.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+<script src="assets/js/image-slot.js"></script>
 </body>
 </html>

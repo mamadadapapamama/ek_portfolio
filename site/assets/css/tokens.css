@@ -1,0 +1,30 @@
+/* Design tokens */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper:      oklch(0.985 0.005 80);
+  --paper-2:    oklch(0.955 0.008 78);
+  --ink:        oklch(0.205 0.012 60);
+  --ink-soft:   oklch(0.46 0.012 60);
+  --ink-faint:  oklch(0.63 0.010 60);
+  --line:       oklch(0.86 0.010 75);
+  --line-soft:  oklch(0.91 0.008 78);
+  --accent:     oklch(0.585 0.155 38);
+  --accent-ink: oklch(0.46 0.135 36);
+  --status-ok:  oklch(0.7 0.17 145);
+
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans:  "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, monospace;
+
+  --serif: var(--font-serif);
+  --sans:  var(--font-sans);
+  --mono:  var(--font-mono);
+
+  --maxw: 1240px;
+  --gutter: clamp(22px, 5vw, 72px);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+}

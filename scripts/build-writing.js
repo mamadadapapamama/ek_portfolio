@@ -42,52 +42,22 @@ const PROP = {
   cover: process.env.NOTION_PROP_COVER || "cover",
 };
 
-function navLinks(basePath = "") {
-  const workHref = basePath ? `${basePath}index.html#work` : "index.html#work";
-  return `
-<nav class="nav">
-  <a class="brand" href="${basePath}index.html">EK<span class="dot"></span></a>
-  <div class="links">
-    <a href="${workHref}">Work</a>
-    <a href="${basePath}writing.html">Writing</a>
-    <a href="mailto:eunkyung.ek.kim@gmail.com" class="cta">Contact</a>
-  </div>
-</nav>`;
-}
-
-function footer(basePath = "") {
-  return `
-<footer class="foot">
-  <div class="wrap">
-    <p class="big"><a href="mailto:eunkyung.ek.kim@gmail.com">Let's make it<br />real <span class="arr">↗</span></a></p>
-    <div class="meta">
-      <span>© ${new Date().getFullYear()} Eunkyung Kim</span>
-      <div class="social">
-        <a href="mailto:eunkyung.ek.kim@gmail.com">Email</a>
-        <a href="${basePath}writing.html">Writing</a>
-        <a href="${basePath}index.html#work">Work</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="${basePath}assets/main.js"></script>`;
-}
-
 function pageShell({ title, basePath, body, extraHead = "" }) {
+  const workHref = basePath ? `${basePath}index.html#work` : "index.html#work";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(title)}</title>
-<link rel="stylesheet" href="${basePath}assets/style.css" />
-<link rel="stylesheet" href="${basePath}assets/writing.css" />
+<link rel="stylesheet" href="${basePath}assets/css/main.css" />
 ${extraHead}
 </head>
 <body>
-${navLinks(basePath)}
+<div data-site-nav data-root="${basePath}" data-work-href="${workHref}"></div>
 ${body}
-${footer(basePath)}
+<div data-site-footer data-root="${basePath}" data-variant="writing"></div>
+<script type="module" src="${basePath}assets/js/main.js"></script>
 </body>
 </html>`;
 }
