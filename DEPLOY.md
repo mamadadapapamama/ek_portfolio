@@ -1,49 +1,42 @@
 # ekkim.work production deploy
 
-This app serves both domains from one Node process:
+## Portfolio (`ekkim.work`)
 
-- `ekkim.work` -> portfolio site (static HTML at repo root)
-- `app.ekkim.work` -> archive admin app (write image/title/date/body)
+Vercel deploys from `main` and serves the static site in `portfolio-byclaude/` via `vercel.json`.
 
-## Option A) Render (recommended)
+After pushing to GitHub, confirm the Vercel project:
 
-### 1) Connect this GitHub repo
+1. Connected repo: `mamadadapapamama/ek_portfolio`
+2. Production branch: `main`
+3. Framework preset: **Other** (no Astro build)
+4. Custom domains: `ekkim.work`, `www.ekkim.work`
 
-Render deploys from the `main` branch of [ek_portfolio](https://github.com/mamadadapapamama/ek_portfolio).
+If an old Astro build still appears, trigger **Redeploy** on the latest `main` commit.
 
-### 2) Create web service from `render.yaml`
+## Archive admin (`app.ekkim.work`)
 
-- Render Dashboard -> New -> Blueprint
-- Select this repository
-- Render reads `render.yaml` automatically
+The admin app needs the Node server in `server.js` (upload API + persistent disk).
 
-### 3) Add custom domains
+### Render setup
 
-In Render service settings -> Custom Domains:
+1. Render Dashboard → New → Blueprint → select this repo
+2. Render reads `render.yaml`
+3. Add custom domain `app.ekkim.work`
+4. Point DNS for `app` to Render
 
-- `ekkim.work`
-- `www.ekkim.work`
-- `app.ekkim.work`
+### Verify
 
-### 4) Update DNS
+- `https://ekkim.work` — new portfolio
+- `https://app.ekkim.work` — admin page
+- Save one entry in the admin and confirm it persists
 
-At your DNS provider, point apex/root `ekkim.work`, `www`, and `app` to the Render targets shown in the custom domain screen.
-
-### 5) Verify
-
-- `https://ekkim.work` loads the portfolio
-- `https://app.ekkim.work` loads the admin page
-- save one entry in the app page and confirm it persists
-
----
-
-## Option B) Self-host with Nginx
-
-Use `deploy/nginx/ekkim.work.conf`.
+## Local dev
 
 ```bash
 npm install
 npm start
 ```
 
-Then install and enable the Nginx config, point DNS to your server, and add HTTPS with certbot. See the nginx config file for host routing.
+## Self-host (Nginx)
+
+Use `deploy/nginx/ekkim.work.conf` and run `npm start` behind Nginx + certbot.

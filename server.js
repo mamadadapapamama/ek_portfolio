@@ -8,7 +8,7 @@ const PORT = Number(process.env.PORT || 3000);
 app.set("trust proxy", true);
 
 const rootDir = __dirname;
-const portfolioDir = rootDir;
+const portfolioDir = path.join(rootDir, "portfolio-byclaude");
 const appDir = path.join(rootDir, "ek_byclaude", "app");
 const dataDir = process.env.DATA_DIR
   ? path.resolve(process.env.DATA_DIR)
