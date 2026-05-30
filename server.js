@@ -117,15 +117,15 @@ app.post("/api/entries", upload.single("image"), (req, res) => {
 });
 
 app.get("/app", (_req, res) => {
-  res.sendFile(path.join(appDir, "index.html"));
+  res.sendFile(path.resolve(appDir, "index.html"));
 });
 
 app.get("/", (req, res) => {
   if (wantsAppHost(req)) {
-    res.sendFile(path.join(appDir, "index.html"));
+    res.sendFile(path.resolve(appDir, "index.html"));
     return;
   }
-  res.sendFile(path.join(portfolioDir, "index.html"));
+  res.sendFile(path.resolve(portfolioDir, "index.html"));
 });
 
 app.use(express.static(portfolioDir, { index: false }));
