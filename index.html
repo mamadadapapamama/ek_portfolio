@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EK — I help founders make ideas real</title>
+<link rel="stylesheet" href="assets/style.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  /* ---- hero ---- */
+  .hero { padding: clamp(36px, 6vw, 80px) 0 clamp(48px, 7vw, 96px); }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.5fr 0.78fr;
+    gap: clamp(28px, 4vw, 72px); align-items: end;
+  }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; gap: clamp(32px, 6vw, 48px); } }
+  .hero .kick { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: clamp(24px, 4vw, 44px); }
+  .hero .kick .status { display: inline-flex; align-items: center; gap: 8px; }
+  .hero .kick .status .led { width: 8px; height: 8px; border-radius: 50%; background: oklch(0.7 0.17 145); box-shadow: 0 0 0 3px oklch(0.7 0.17 145 / .2); }
+  .hero h1 { margin: 0; }
+  .hero .sub { margin-top: clamp(30px, 4vw, 52px); }
+  .hero .sub .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: clamp(24px, 3vw, 36px); }
+
+  /* portrait */
+  .hero-portrait { position: relative; align-self: stretch; }
+  @media (max-width: 880px) { .hero-portrait { max-width: 340px; } }
+  .hero-portrait .frame {
+    position: relative; width: 100%; height: 100%;
+    min-height: clamp(340px, 42vw, 560px);
+    border-radius: 8px; overflow: hidden; background: var(--paper-2);
+  }
+  .hero-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 28%; display: block; }
+  .hero-portrait .ptag {
+    position: absolute; left: 14px; bottom: 14px; z-index: 2;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--paper); background: color-mix(in oklab, var(--ink) 55%, transparent);
+    backdrop-filter: blur(6px); padding: 6px 11px; border-radius: 999px;
+  }
+
+  /* ---- work ---- */
+  .work { padding: clamp(40px, 6vw, 80px) 0; }
+  .work-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: clamp(28px, 4vw, 48px); }
+  .proj { display: block; border-top: 1px solid var(--line); padding: clamp(26px, 4vw, 48px) 0; }
+  .proj:last-of-type { border-bottom: 1px solid var(--line); }
+  .proj-row { display: grid; grid-template-columns: 64px 1fr; gap: clamp(18px, 3vw, 40px); align-items: start; }
+  .proj .num { font-family: var(--mono); font-size: 13px; color: var(--ink-faint); padding-top: 8px; }
+  .proj .body { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(20px, 4vw, 56px); align-items: center; }
+  @media (max-width: 860px) { .proj .body { grid-template-columns: 1fr; } .proj-row { grid-template-columns: 40px 1fr; } }
+  .proj h3 {
+    font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4.6vw, 58px);
+    line-height: 1.0; letter-spacing: -0.015em; margin: 0 0 14px;
+    transition: color .3s var(--ease);
+  }
+  .proj:hover h3 { color: var(--accent); }
+  .proj .tagline { color: var(--ink-soft); font-size: clamp(16px, 1.6vw, 19px); max-width: 40ch; margin: 0 0 22px; }
+  .proj .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj .tag {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.02em;
+    padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft);
+  }
+  .proj .more { display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; font-family: var(--mono); font-size: 13px; color: var(--ink); }
+  .proj .more .arr { transition: transform .3s var(--ease); }
+  .proj:hover .more .arr { transform: translate(4px, -4px); }
+  .proj .media { aspect-ratio: 4 / 3; border-radius: 4px; }
+  .proj .media image-slot { width: 100%; height: 100%; }
+  .proj .media-inner { overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; align-self: center; }
+  .proj .media-inner image-slot { transition: transform .8s var(--ease); }
+  .proj:hover .media-inner image-slot { transform: scale(1.03); }
+
+  /* ---- toolkit ---- */
+  .kit { background: var(--paper-2); padding: clamp(64px, 9vw, 130px) 0; }
+  .kit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: clamp(34px, 5vw, 64px); }
+  @media (max-width: 720px) { .kit-grid { grid-template-columns: 1fr; } }
+  .kit-cell { background: var(--paper-2); padding: clamp(24px, 3.5vw, 40px); }
+  .kit-cell .n { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+  .kit-cell h4 { font-family: var(--serif); font-weight: 400; font-size: clamp(22px, 2.6vw, 31px); margin: 14px 0 10px; letter-spacing: -0.01em; }
+  .kit-cell p { margin: 0; color: var(--ink-soft); font-size: 15.5px; line-height: 1.55; }
+
+  /* foot cta */
+  .foot-cta { margin-top: clamp(32px, 4vw, 48px); }
+
+  /* ---- experience ---- */
+  .exp { padding: clamp(56px, 8vw, 110px) 0; }
+  .exp-logos {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); margin-top: clamp(28px, 4vw, 48px);
+  }
+  @media (max-width: 700px) { .exp-logos { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 420px) { .exp-logos { grid-template-columns: repeat(2, 1fr); } }
+  .exp-cell {
+    background: var(--paper); padding: clamp(20px, 3vw, 36px) clamp(16px, 2vw, 28px);
+    display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  }
+  .exp-cell .logo { height: 28px; display: flex; align-items: center; }
+  .exp-cell .logo svg { height: 28px; width: auto; fill: var(--ink); }
+  .exp-cell .exp-role-sm { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--ink-faint); line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">EK<span class="dot"></span></a>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="about.html">About</a>
+    <a href="mailto:eunkyung.ek.kim@gmail.com" class="cta">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero wrap" data-screen-label="Hero">
+  <div class="kick" data-reveal>
+    <span class="eyebrow">EK · Eunkyung Kim</span>
+    <span class="eyebrow status"><span class="led"></span>Open for projects</span>
+  </div>
+
+  <div class="hero-grid">
+    <div>
+      <h1 class="display" data-reveal data-delay="1">
+        <span class="accent">EK</span> here, I help<br />founders make<br />ideas <span class="it accent">real.</span>
+      </h1>
+      <div class="sub">
+        <p class="lede" data-reveal data-delay="2">
+          Years spent designing experiences taught me one thing: ideas need to be <em>built</em>, not just designed.
+        </p>
+        <div class="actions" data-reveal data-delay="3">
+          <a class="btn" href="#work">See selected work <span class="arr">↗</span></a>
+          <a class="btn ghost" href="mailto:eunkyung.ek.kim@gmail.com">Book a call</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-portrait" data-reveal data-delay="2">
+      <div class="frame">
+        <img src="assets/ek-portrait.jpg" alt="Portrait of Eunkyung (EK) Kim" />
+        <span class="ptag">EK</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WORK ============ -->
+<section class="work wrap" id="work">
+  <div class="work-head" data-reveal>
+    <h2 class="section-title">Built solely by her</h2>
+    <span class="eyebrow">2024 — 2026</span>
+  </div>
+
+  <!-- 01 Noworrytingxie -->
+  <a class="proj" href="pikabook.html" data-reveal>
+    <div class="proj-row">
+      <div class="num">01</div>
+      <div class="body">
+        <div>
+          <span class="eyebrow">WEBAPP. WEBSITE. </span>
+          <h3>No worry TingXie</h3>
+          <p class="tagline">A webapp for parents to worry free about their Child's Chinese vocabulary</p>
+          <div class="tags">
+            <span class="tag">BACKEND</span><span class="tag">Branding</span>
+            <span class="tag">Web app</span>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center;margin-top:24px;flex-wrap:wrap"><span class="more">Read the case study <span class="arr">↗</span></span><a href="https://noworrytingxie.com" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-family:var(--mono);font-size:13px;color:var(--accent-ink);border-bottom:1px solid color-mix(in oklab,var(--accent) 40%,transparent);padding-bottom:1px">noworrytingxie.com ↗</a></div>
+        </div>
+        <div class="media media-inner">
+          <div style="width:100%;height:100%;background:oklch(0.90 0.03 75);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:16px 20px;box-sizing:border-box;">
+  <div style="position:absolute;width:260px;height:260px;border-radius:50%;background:oklch(1 0 0 / .06);top:-80px;right:-80px;pointer-events:none"></div>
+  <div style="position:absolute;width:160px;height:160px;border-radius:50%;background:oklch(1 0 0 / .06);bottom:-50px;left:-50px;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;width:88%;border-radius:8px;overflow:hidden;box-shadow:0 18px 48px oklch(0 0 0 / .20),0 3px 12px oklch(0 0 0 / .10);flex-shrink:0;">
+    <div style="background:#f0ede8;padding:7px 11px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #ddd8d0;flex-shrink:0;">
+      <div style="display:flex;gap:4px">
+        <div style="width:8px;height:8px;border-radius:50%;background:#ff6059"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#febc2e"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#29c940"></div>
+      </div>
+      <div style="flex:1;background:#e4e1dc;border-radius:4px;padding:3px 8px;font-family:monospace;font-size:9px;color:#888;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">noworrytingxie.com</div>
+    </div>
+    <div style="overflow:hidden;height:180px;">
+      <img src="assets/noworry-screenshot.png" alt="noworrytingxie.com" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block;" />
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 02 Waldorf -->
+  <a class="proj" href="waldorf.html" data-reveal>
+    <div class="proj-row">
+      <div class="num">02</div>
+      <div class="body">
+        <div>
+          <span class="eyebrow">Web · CMS · SEO</span>
+          <h3>Jeju Waldorf kindergarten</h3>
+          <p class="tagline">A website for Jeju Waldorf kindergarten — increasing school visibility online, letting teachers manage content via CMS, with effective SEO built in from day one. </p>
+          <div class="tags">
+            <span class="tag">Website</span><span class="tag">CMS</span>
+            <span class="tag">SEO</span><span class="tag">Astro</span><span class="tag">Cloudflare</span>
+          </div>
+          <span class="more">Read the case study <span class="arr">↗</span></span>
+        </div>
+        <div class="media media-inner">
+          <div style="width:100%;height:100%;background:oklch(0.88 0.04 155);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:16px 20px;box-sizing:border-box;">
+  <div style="position:absolute;width:260px;height:260px;border-radius:50%;background:oklch(1 0 0 / .06);top:-80px;right:-80px;pointer-events:none"></div>
+  <div style="position:absolute;width:160px;height:160px;border-radius:50%;background:oklch(1 0 0 / .06);bottom:-50px;left:-50px;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;width:88%;border-radius:8px;overflow:hidden;box-shadow:0 18px 48px oklch(0 0 0 / .20),0 3px 12px oklch(0 0 0 / .10);flex-shrink:0;">
+    <div style="background:#f0ede8;padding:7px 11px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #ddd8d0;flex-shrink:0;">
+      <div style="display:flex;gap:4px">
+        <div style="width:8px;height:8px;border-radius:50%;background:#ff6059"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#febc2e"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#29c940"></div>
+      </div>
+      <div style="flex:1;background:#e4e1dc;border-radius:4px;padding:3px 8px;font-family:monospace;font-size:9px;color:#888;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">jejuwaldorf-kinder.com</div>
+    </div>
+    <div style="overflow:hidden;height:180px;">
+      <img src="assets/waldorf-screenshot.png" alt="jejuwaldorf-kinder.com" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block;" />
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 03 Pikabook -->
+  <a class="proj" href="pikabook.html" data-reveal>
+    <div class="proj-row">
+      <div class="num">03</div>
+      <div class="body">
+        <div>
+          <span class="eyebrow">iOS · AI · Web</span>
+          <h3>Pikabook</h3>
+          <p class="tagline">An AI language-learning companion — every book becomes your personal tutor.</p>
+          <div class="tags">
+            <span class="tag">Product</span><span class="tag">iOS</span>
+            <span class="tag">Firebase</span><span class="tag">Gemini</span>
+          </div>
+          <span class="more">Read the case study <span class="arr">↗</span></span>
+        </div>
+        <div class="media media-inner">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,oklch(0.88 0.06 38) 0%,oklch(0.78 0.09 38) 60%,oklch(0.68 0.12 200) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+  <!-- background decorative circles -->
+  <div style="position:absolute;width:280px;height:280px;border-radius:50%;background:oklch(1 0 0 / .07);top:-60px;right:-60px;"></div>
+  <div style="position:absolute;width:180px;height:180px;border-radius:50%;background:oklch(1 0 0 / .07);bottom:-40px;left:-40px;"></div>
+  <!-- phone frame -->
+  <div style="position:relative;z-index:2;width:44%;max-width:160px;aspect-ratio:9/19.5;background:#111;border-radius:32px;padding:3px;box-shadow:0 24px 64px oklch(0 0 0 / .45),inset 0 0 0 1px oklch(1 0 0 / .15);">
+    <!-- dynamic island -->
+    <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#000;border-radius:20px;z-index:3;"></div>
+    <!-- screen -->
+    <div style="width:100%;height:100%;border-radius:30px;overflow:hidden;background:#000;">
+      <img src="assets/pikabook-app.png" alt="Pikabook" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 04 New project — fill in -->
+  <a class="proj" href="new-project.html" data-reveal>
+    <div class="proj-row">
+      <div class="num">04</div>
+      <div class="body">
+        <div>
+          <span class="eyebrow">Category · Platform</span>
+          <h3>Project title</h3>
+          <p class="tagline">Short description of this project — what it is, who it's for, and why it matters.</p>
+          <div class="tags">
+            <span class="tag">Tag 1</span><span class="tag">Tag 2</span><span class="tag">Tag 3</span>
+          </div>
+          <span class="more">Read the case study <span class="arr">↗</span></span>
+        </div>
+        <div class="media media-inner">
+          <image-slot id="idx-new" shape="rounded" radius="4" style="width:100%;height:100%" placeholder="Drop project image here"></image-slot>
+        </div>
+      </div>
+    </div>
+  </a>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- ============ TOOLKIT ============ -->
+<section class="kit" id="toolkit">
+  <div class="wrap">
+    <div class="work-head" data-reveal>
+      <h2 class="section-title">How she approaches</h2>
+      <span class="eyebrow">Process</span>
+    </div>
+    <div class="kit-grid">
+      <div class="kit-cell" data-reveal>
+        <span class="n">01</span>
+        <h4>Start with clarity</h4>
+        <p>Before any screen gets drawn, she digs into the problem — who the users are, what they actually need, and what success looks like for the business. No assumptions, no wasted sprints.</p>
+      </div>
+      <div class="kit-cell" data-reveal data-delay="1">
+        <span class="n">02</span>
+        <h4>Design the right thing</h4>
+        <p>She shapes the experience with a designer's eye — flows, interfaces, systems. Not just what looks good, but what works for the person using it. Every detail is intentional.</p>
+      </div>
+      <div class="kit-cell" data-reveal>
+        <span class="n">03</span>
+        <h4>Scope and ship</h4>
+        <p>She defines the v1 ruthlessly — what's in, what's out, what can wait. Then she builds it: front-end, back-end, AI integrations, and deploys. She doesn't hand off; she ships.</p>
+      </div>
+      <div class="kit-cell" data-reveal data-delay="1">
+        <span class="n">04</span>
+        <h4>Learn and iterate</h4>
+        <p>A v1 is a hypothesis. She puts it in front of real people, watches what happens, and helps you decide what to do next — so the second version is smarter than the first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="exp wrap" id="experience">
+  <div class="work-head" data-reveal>
+    <h2 class="section-title">Companies she<br />worked with</h2>
+    <a class="eyebrow" href="about.html" style="color:var(--accent-ink);border-bottom:1px solid color-mix(in oklab,var(--accent) 40%,transparent)">Resume →</a>
+  </div>
+
+  <div class="exp-logos">
+
+    <!-- Autodesk -->
+    <div class="exp-cell" data-reveal>
+      <div class="logo">
+        <svg viewBox="0 0 120 36" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="18,2 34,30 2,30" fill="none" stroke="currentColor" stroke-width="3.5" style="fill:none;stroke:var(--ink);stroke-width:3.5"/>
+          <line x1="9" y1="22" x2="27" y2="22" stroke="var(--ink)" stroke-width="3.5"/>
+          <text x="42" y="25" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="0.5" style="fill:var(--ink)">AUTODESK</text>
+        </svg>
+      </div>
+      <span class="exp-role-sm">Principal<br />Designer</span>
+    </div>
+
+    <!-- Toptal -->
+    <div class="exp-cell" data-reveal data-delay="1">
+      <div class="logo">
+        <svg viewBox="0 0 90 36" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="Arial,sans-serif" font-size="26" font-weight="900" letter-spacing="-1" style="fill:var(--ink)">top</text>
+          <text x="54" y="28" font-family="Arial,sans-serif" font-size="26" font-weight="900" style="fill:var(--accent)">tal</text>
+        </svg>
+      </div>
+      <span class="exp-role-sm">Freelance<br />Product Designer</span>
+    </div>
+
+    <!-- Visenze -->
+    <div class="exp-cell" data-reveal data-delay="2">
+      <div class="logo">
+        <svg viewBox="0 0 100 36" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="-0.5" style="fill:var(--ink)">ViSenze</text>
+        </svg>
+      </div>
+      <span class="exp-role-sm">Design<br />Manager</span>
+    </div>
+
+    <!-- Singtel -->
+    <div class="exp-cell" data-reveal data-delay="3">
+      <div class="logo">
+        <svg viewBox="0 0 100 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="4" width="28" height="28" rx="14" style="fill:var(--ink)"/>
+          <text x="4.5" y="23" font-family="Arial,sans-serif" font-size="11" font-weight="700" style="fill:var(--paper)">ST</text>
+          <text x="34" y="26" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="-0.5" style="fill:var(--ink)">Singtel</text>
+        </svg>
+      </div>
+      <span class="exp-role-sm">Senior UX<br />Designer</span>
+    </div>
+
+    <!-- OCBC -->
+    <div class="exp-cell" data-reveal data-delay="4">
+      <div class="logo">
+        <svg viewBox="0 0 80 36" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="Arial,sans-serif" font-size="24" font-weight="900" letter-spacing="1" style="fill:var(--ink)">OCBC</text>
+        </svg>
+      </div>
+      <span class="exp-role-sm">UX<br />Designer</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal style="color: color-mix(in oklab, var(--paper) 60%, transparent)">Want to build something?</span>
+    <p class="big" data-reveal data-delay="1">
+      <a href="mailto:eunkyung.ek.kim@gmail.com">Let's make it
+real together↗</a>
+    </p>
+    <div class="foot-cta" data-reveal data-delay="2">
+      <a class="btn" href="mailto:eunkyung.ek.kim@gmail.com" style="background:var(--paper);color:var(--ink);">Send me an email <span class="arr">↗</span></a>
+    </div>
+    <div class="meta">
+      <span>© <span data-year>2026</span> Eunkyung (EK) Kim</span>
+      <div class="social">
+        <a href="mailto:eunkyung.ek.kim@gmail.com">Email</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+      </div>
+      <span>Idea → v1</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/main.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "showToolkit": true,
+  "toolkitTitle": "Toolkit",
+  "accentColor": "oklch(0.585 0.155 38)"
+}/*EDITMODE-END*/;
+
+function EKTweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const kit = document.getElementById('toolkit');
+    if (kit) kit.style.display = t.showToolkit ? '' : 'none';
+  }, [t.showToolkit]);
+
+  React.useEffect(() => {
+    const h2 = document.querySelector('#toolkit .section-title');
+    if (!h2) return;
+    h2.innerHTML = t.toolkitTitle === 'Toolkit'
+      ? 'My toolkit<br />for building v1'
+      : 'What I bring<br />to your v1';
+  }, [t.toolkitTitle]);
+
+  React.useEffect(() => {
+    document.documentElement.style.setProperty('--accent', t.accentColor);
+    // derive a slightly darker ink version
+    const map = {
+      'oklch(0.585 0.155 38)':  'oklch(0.46 0.135 36)',
+      'oklch(0.48 0.18 260)':   'oklch(0.38 0.16 260)',
+      'oklch(0.50 0.16 160)':   'oklch(0.40 0.14 160)',
+    };
+    document.documentElement.style.setProperty('--accent-ink', map[t.accentColor] || 'oklch(0.46 0.135 36)');
+  }, [t.accentColor]);
+
+  return (
+    <TweaksPanel>
+      <TweakSection label="Toolkit section" />
+      <TweakToggle
+        label="Show toolkit"
+        value={t.showToolkit}
+        onChange={v => setTweak('showToolkit', v)}
+      />
+      <TweakRadio
+        label="Section title"
+        value={t.toolkitTitle}
+        options={['Toolkit', 'What I bring']}
+        onChange={v => setTweak('toolkitTitle', v)}
+      />
+      <TweakSection label="Accent colour" />
+      <TweakColor
+        label="Accent"
+        value={t.accentColor}
+        options={[
+          'oklch(0.585 0.155 38)',
+          'oklch(0.48 0.18 260)',
+          'oklch(0.50 0.16 160)',
+        ]}
+        onChange={v => setTweak('accentColor', v)}
+      />
+    </TweaksPanel>
+  );
+}
+
+const tweakRoot = document.createElement('div');
+document.body.appendChild(tweakRoot);
+ReactDOM.createRoot(tweakRoot).render(<EKTweaks />);
+</script>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About EK — Eunkyung Kim</title>
+<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="assets/case.css" />
+<style>
+  /* ---- about layout ---- */
+  .about-hero { padding: clamp(28px, 5vw, 56px) 0 clamp(40px, 6vw, 72px); }
+  .about-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(52px, 10vw, 130px); line-height: 0.95; letter-spacing: -0.02em; margin: 0 0 clamp(24px,4vw,44px); }
+  .about-hero h1 .it { font-style: italic; }
+
+  .about-cols { display: grid; grid-template-columns: 1fr 1.8fr; gap: clamp(32px, 6vw, 100px); padding: clamp(48px, 7vw, 90px) 0; border-top: 1px solid var(--line); }
+  @media (max-width: 760px) { .about-cols { grid-template-columns: 1fr; gap: 28px; } }
+  .about-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+
+  /* bio */
+  .bio p { font-size: clamp(19px, 2.1vw, 24px); line-height: 1.55; letter-spacing: -0.01em; margin: 0 0 1em; max-width: 52ch; }
+  .bio p:last-child { margin: 0; }
+
+  /* links row */
+  .about-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }
+
+  /* timeline */
+  .tl-row {
+    display: grid; grid-template-columns: 180px 1fr; gap: clamp(16px, 3vw, 48px);
+    padding: clamp(22px, 3vw, 32px) 0; border-top: 1px solid var(--line-soft);
+    align-items: start;
+  }
+  .tl-row:last-child { border-bottom: 1px solid var(--line-soft); }
+  @media (max-width: 640px) { .tl-row { grid-template-columns: 1fr; gap: 8px; } }
+  .tl-date { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-faint); padding-top: 5px; }
+  .tl-co { font-family: var(--serif); font-size: clamp(22px, 2.6vw, 32px); letter-spacing: -0.01em; line-height: 1; margin: 0 0 8px; }
+  .tl-role { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 10px; }
+  .tl-desc { font-size: 16px; color: var(--ink-soft); line-height: 1.55; max-width: 52ch; margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">EK<span class="dot"></span></a>
+  <div class="links">
+    <a href="index.html#work">Work</a>
+    <a href="mailto:eunkyung.ek.kim@gmail.com" class="cta">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <a class="cs-back" href="index.html"><span class="arr">←</span> Home</a>
+
+  <!-- hero -->
+  <header class="about-hero" data-screen-label="About">
+    <h1 data-reveal>Eun<span class="it">kyung</span><br />Kim</h1>
+    <p class="lede" data-reveal data-delay="1" style="max-width:38ch">
+      Years spent designing experiences taught me one thing: ideas need to be <em>built</em>, not just designed.
+    </p>
+    <div class="about-links" data-reveal data-delay="2">
+      <a class="btn" href="mailto:eunkyung.ek.kim@gmail.com">Get in touch <span class="arr">↗</span></a>
+      <a class="btn ghost" href="assets/EK-Kim-Resume.pdf" target="_blank" rel="noopener" download>Download CV <span class="arr">↓</span></a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/eunkyungkim" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+    </div>
+  </header>
+
+  <!-- bio -->
+  <div class="about-cols" data-screen-label="Bio">
+    <div class="about-label" data-reveal>About</div>
+    <div class="bio" data-reveal data-delay="1">
+      <p>
+        I'm EK — a designer who learned to build. Over a decade working across banking, telecoms, AI and enterprise software, I discovered that the gap between a great idea and a real product is almost always about execution.
+      </p>
+      <p>
+        Now I work directly with founders to close that gap: designing the product, scoping the v1, and shipping it — end to end.
+      </p>
+    </div>
+  </div>
+
+  <!-- experience -->
+  <div class="about-cols" data-screen-label="Experience">
+    <div class="about-label" data-reveal>Experience</div>
+    <div data-reveal data-delay="1">
+      <div class="tl-row">
+        <div class="tl-date">20XX — Present</div>
+        <div>
+          <p class="tl-co">Independent</p>
+          <p class="tl-role">Founder / Product Designer &amp; Builder</p>
+          <p class="tl-desc">Working with early-stage founders to turn ideas into shipped products — design, build, and launch under one roof.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">20XX — 20XX</div>
+        <div>
+          <p class="tl-co">Autodesk</p>
+          <p class="tl-role">Principal Designer</p>
+          <p class="tl-desc">Led design for enterprise-scale products used by millions of creators worldwide. Set design direction, mentored teams, and drove quality at scale.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">20XX — 20XX</div>
+        <div>
+          <p class="tl-co">Toptal</p>
+          <p class="tl-role">Freelance Product Designer</p>
+          <p class="tl-desc">Embedded with early-stage startups to take 0→1 products from concept to launch. Rapid prototyping, MVP definition, and direct founder collaboration.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">20XX — 20XX</div>
+        <div>
+          <p class="tl-co">Visenze</p>
+          <p class="tl-role">Design Manager</p>
+          <p class="tl-desc">Built and led the design team for an AI-powered visual commerce platform. Grew design culture, shipped product, and bridged design to engineering.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">20XX — 20XX</div>
+        <div>
+          <p class="tl-co">Singtel</p>
+          <p class="tl-role">Senior UX Designer</p>
+          <p class="tl-desc">Shaped digital experiences across consumer and enterprise telecoms products for Southeast Asia's largest telco.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">20XX — 20XX</div>
+        <div>
+          <p class="tl-co">OCBC</p>
+          <p class="tl-role">UX Designer</p>
+          <p class="tl-desc">Designed banking and financial services experiences for one of Southeast Asia's largest banks. First role — built a foundation in research-led, human-centred design.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- next cta -->
+  <section class="cs-next">
+    <a href="index.html#work">
+      <div>
+        <div class="lbl">See what she's built</div>
+        <div class="ttl">Selected work</div>
+      </div>
+      <span class="arr">↗</span>
+    </a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal style="color: color-mix(in oklab, var(--paper) 60%, transparent)">Want to build something?</span>
+    <p class="big" data-reveal data-delay="1">
+      <a href="mailto:eunkyung.ek.kim@gmail.com">Let's make it<br />real <span class="arr">↗</span></a>
+    </p>
+    <div style="margin-top: clamp(32px, 4vw, 48px)" data-reveal data-delay="2">
+      <a class="btn" href="mailto:eunkyung.ek.kim@gmail.com" style="background:var(--paper);color:var(--ink);">Send me an email <span class="arr">↗</span></a>
+    </div>
+    <div class="meta">
+      <span>© <span data-year>2026</span> Eunkyung (EK) Kim</span>
+      <div class="social">
+        <a href="mailto:eunkyung.ek.kim@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/eunkyungkim" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="index.html#work">Work</a>
+      </div>
+      <span>Idea → v1</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
