@@ -2,7 +2,7 @@
 
 ## Portfolio (`ekkim.work`)
 
-Vercel deploys from `main` and serves the static site in `portfolio-byclaude/` via `vercel.json`.
+Vercel deploys from `main` and serves the static site in `site/` via `vercel.json`.
 
 After pushing to GitHub, confirm the Vercel project:
 
@@ -11,32 +11,21 @@ After pushing to GitHub, confirm the Vercel project:
 3. Framework preset: **Other** (no Astro build)
 4. Custom domains: `ekkim.work`, `www.ekkim.work`
 
-If an old Astro build still appears, trigger **Redeploy** on the latest `main` commit.
+Environment variables (Settings → Environment Variables):
 
-## Archive admin (`app.ekkim.work`)
+- `NOTION_API_KEY`
+- `NOTION_DATABASE_ID`
 
-The admin app needs the Node server in `server.js` (upload API + persistent disk).
+If writing posts do not appear, redeploy after fixing env vars.
 
-### Render setup
+## Verify
 
-1. Render Dashboard → New → Blueprint → select this repo
-2. Render reads `render.yaml`
-3. Add custom domain `app.ekkim.work`
-4. Point DNS for `app` to Render
-
-### Verify
-
-- `https://ekkim.work` — new portfolio
-- `https://app.ekkim.work` — admin page
-- Save one entry in the admin and confirm it persists
+- `https://ekkim.work` — portfolio
+- `https://ekkim.work/writing` — Notion posts
 
 ## Local dev
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
-
-## Self-host (Nginx)
-
-Use `deploy/nginx/ekkim.work.conf` and run `npm start` behind Nginx + certbot.

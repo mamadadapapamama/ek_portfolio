@@ -72,9 +72,9 @@ npm run build:writing
 
 This generates:
 
-- `portfolio-byclaude/writing.html` — index
-- `portfolio-byclaude/writing/*.html` — posts
-- `portfolio-byclaude/assets/writing/*` — downloaded images
+- `site/writing.html` — index
+- `site/writing/*.html` — posts
+- `site/assets/writing/*` — downloaded images
 
 The portfolio **hero is not affected**. Writing lives only under `/writing`.
 

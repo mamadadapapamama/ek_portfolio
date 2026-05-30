@@ -12,7 +12,7 @@ const {
 } = require("./notion-utils");
 
 const ROOT = path.join(__dirname, "..");
-const SITE_DIR = path.join(ROOT, "portfolio-byclaude");
+const SITE_DIR = path.join(ROOT, "site");
 const WRITING_DIR = path.join(SITE_DIR, "writing");
 const MEDIA_DIR = path.join(SITE_DIR, "assets", "writing");
 

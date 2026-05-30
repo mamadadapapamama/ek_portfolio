@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install",
   "buildCommand": "npm run build:writing",
-  "outputDirectory": "portfolio-byclaude",
+  "outputDirectory": "site",
   "cleanUrls": true,
   "trailingSlash": false
 }

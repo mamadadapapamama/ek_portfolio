@@ -2,20 +2,16 @@
   "name": "ekkim",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
   "scripts": {
     "build:writing": "node scripts/build-writing.js",
     "build": "npm run build:writing",
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "npm run build && npx --yes serve site"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@notionhq/client": "^2.3.0",
-    "express": "^5.2.1",
-    "multer": "^2.1.1"
+    "@notionhq/client": "^2.3.0"
   }
 }

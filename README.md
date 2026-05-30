@@ -5,7 +5,7 @@ Portfolio site for [ekkim.work](https://ekkim.work).
 ## Layout
 
 ```
-portfolio-byclaude/   Portfolio HTML/CSS/assets (edit here)
+site/                 Portfolio HTML/CSS/assets (edit here)
 scripts/              Notion → /writing build
 vercel.json           Vercel deploy config
 ```
@@ -19,14 +19,7 @@ See **[NOTION.md](./NOTION.md)** for database setup and Vercel env vars.
 ```bash
 cp .env.example .env   # add NOTION_API_KEY + NOTION_DATABASE_ID
 npm run build:writing  # generate writing.html + posts locally
-```
-
-## Local development
-
-```bash
-npm install
-npm run build:writing  # optional, if Notion is configured
-npm start              # optional, local Node preview
+npm run dev            # preview at localhost:3000
 ```
 
 ## Deploy
@@ -35,7 +28,7 @@ npm start              # optional, local Node preview
 
 1. `npm install`
 2. `npm run build:writing` (pulls from Notion)
-3. serves `portfolio-byclaude/`
+3. serves `site/`
 
 Add `NOTION_API_KEY` and `NOTION_DATABASE_ID` in Vercel → Settings → Environment Variables.
 
@@ -45,4 +38,4 @@ Add `NOTION_API_KEY` and `NOTION_DATABASE_ID` in Vercel → Settings → Environ
 |--------|----------|
 | `main` | Production portfolio + deploy config |
 | `archive/astro-portfolio` | Previous Astro portfolio |
-| `archive/portfolio-byclaude` | Static portfolio snapshot |
+| `archive/portfolio-byclaude` | Static portfolio snapshot (old folder name) |
