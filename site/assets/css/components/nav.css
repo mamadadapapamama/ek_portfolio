@@ -2,10 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px var(--gutter);
+  padding: 18px 0;
   background: color-mix(in oklab, var(--paper) 82%, transparent);
   backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid transparent;
@@ -14,22 +11,31 @@
 
 .nav.is-scrolled { border-bottom-color: var(--line); }
 
-.nav__brand {
-  font-family: var(--serif);
-  font-size: 27px;
-  letter-spacing: -0.01em;
+.nav__inner {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
   display: flex;
-  align-items: baseline;
-  gap: 9px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.nav__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: inline-block;
+.nav__brand {
+  display: flex;
+  align-items: center;
+  line-height: 0;
 }
+
+.nav__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform .25s var(--ease);
+}
+
+.nav__brand:hover .nav__logo { transform: scale(1.06); }
 
 .nav__links {
   display: flex;
@@ -64,7 +70,7 @@
 
 .nav__links a.nav__cta {
   color: var(--paper);
-  background: var(--ink);
+  background: var(--accent);
   padding: 9px 16px;
   border-radius: var(--radius-pill);
   transition: background .25s var(--ease), transform .25s var(--ease);
@@ -73,5 +79,6 @@
 .nav__links a.nav__cta::after { display: none; }
 .nav__links a.nav__cta:hover {
   background: var(--accent-ink);
+  color: var(--paper);
   transform: translateY(-1px);
 }

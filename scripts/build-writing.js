@@ -50,6 +50,7 @@ function pageShell({ title, basePath, body, extraHead = "" }) {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${esc(title)}</title>
+<link rel="icon" href="${basePath}assets/ek_favicon.png" type="image/png" />
 <link rel="stylesheet" href="${basePath}assets/css/main.css" />
 ${extraHead}
 </head>

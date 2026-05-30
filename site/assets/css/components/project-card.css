@@ -48,14 +48,6 @@
   margin: 0 0 22px;
 }
 
-.project-card__footer {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-top: 24px;
-  flex-wrap: wrap;
-}
-
 .project-card__more {
   display: inline-flex;
   align-items: center;
@@ -63,6 +55,13 @@
   font-family: var(--mono);
   font-size: 13px;
   color: var(--ink);
+}
+
+.project-card__live {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 10px;
+  pointer-events: none;
 }
 
 .project-card__more .arr { transition: transform .3s var(--ease); }

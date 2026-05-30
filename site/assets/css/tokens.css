@@ -22,9 +22,15 @@
   --mono:  var(--font-mono);
 
   --maxw: 1240px;
-  --gutter: clamp(22px, 5vw, 72px);
+  --gutter: clamp(24px, 5vw, 96px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-pill: 999px;
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: clamp(48px, 6vw, 96px);
+  }
 }

@@ -38,7 +38,13 @@
 
 /* full media */
 .cs-feature { margin: clamp(34px, 5vw, 64px) 0; }
-.cs-feature .media { aspect-ratio: 16 / 10; border-radius: 6px; }
+.cs-feature .media { aspect-ratio: 16 / 10; border-radius: 6px; overflow: hidden; }
+.cs-feature .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
 .cs-feature image-slot { width: 100%; height: 100%; }
 
 /* prose block */

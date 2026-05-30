@@ -3,127 +3,150 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Project Title — EK</title>
+<title>No Worry Tingxie — EK</title>
+<link rel="icon" href="assets/ek_favicon.png" type="image/png" />
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
 <div data-site-nav data-work-href="index.html#work"></div>
 
-<main class="wrap" data-screen-label="Case study">
+<main class="wrap" data-screen-label="No Worry Tingxie">
   <a class="cs-back" href="index.html#work"><span class="arr">←</span> All work</a>
 
-  <!-- ── HERO ── -->
   <header class="cs-hero">
-    <span class="eyebrow" data-reveal>Category · Platform · Year</span>
-    <h1 data-reveal data-delay="1">Project <span class="it">Title</span></h1>
+    <span class="eyebrow" data-reveal>Web app · Parent tool · 2025</span>
+    <h1 data-reveal data-delay="1">No Worry <span class="it">Tingxie</span></h1>
     <p class="deck" data-reveal data-delay="2">
-      One or two sentences describing what this project is and why it matters —
-      who it's for and what problem it solves.
+      From a broad AI learning app to one reliable weekly tool — helping parents
+      turn this week’s spelling list into a teacher-like practice test at home.
     </p>
 
     <div class="cs-meta" data-reveal data-delay="2">
-      <div><div class="k">Role</div><div class="v">Your role here</div></div>
-      <div><div class="k">Platform</div><div class="v">Web / iOS / etc.</div></div>
-      <div><div class="k">Year</div><div class="v">20XX — 20XX</div></div>
-      <div><div class="k">Live</div><div class="v"><a href="#" target="_blank" rel="noopener">yoursite.com ↗</a></div></div>
+      <div><div class="k">Role</div><div class="v">Product, design &amp; build</div></div>
+      <div><div class="k">Platform</div><div class="v">Web app</div></div>
+      <div><div class="k">Year</div><div class="v">2025 — 2026</div></div>
+      <div><div class="k">Live</div><div class="v"><a href="https://noworrytingxie.com" target="_blank" rel="noopener">noworrytingxie.com ↗</a></div></div>
     </div>
   </header>
 
-  <!-- ── HERO IMAGE ── -->
   <div class="cs-feature" data-reveal>
     <div class="media">
-      <image-slot id="cs-hero-img" shape="rounded" radius="6" style="width:100%;height:100%" placeholder="Hero image — drag yours here"></image-slot>
+      <img src="assets/noworry-screenshot.png" alt="No Worry Tingxie landing page" />
     </div>
   </div>
 </main>
 
-<!-- ── OVERVIEW ── -->
 <section class="cs-block wrap">
   <div class="cs-cols">
-    <div class="label" data-reveal>The idea</div>
+    <div class="label" data-reveal>Brief</div>
     <div class="cs-prose" data-reveal data-delay="1">
-      <h3>What was the problem?</h3>
       <p>
-        Describe the core problem or opportunity this project addressed.
-        Who were the users and what did they need?
-      </p>
-      <p class="muted">
-        Your role in this project and how you approached it.
+        No Worry Tingxie is a lightweight web app that helps primary school parents
+        support their children’s Chinese spelling practice at home. Parents snap or
+        upload this week’s tingxie list, turn it into a practice set, and generate a
+        teacher-like audio test so their child can prepare independently.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ── GALLERY 1 ── -->
-<section class="cs-gallery wrap">
-  <div class="cs-grid-2" data-reveal>
-    <div class="media">
-      <image-slot id="cs-g1" shape="rounded" radius="6" style="width:100%;height:100%" placeholder="Screen / detail 1"></image-slot>
-    </div>
-    <div class="media">
-      <image-slot id="cs-g2" shape="rounded" radius="6" style="width:100%;height:100%" placeholder="Screen / detail 2"></image-slot>
-    </div>
-  </div>
-</section>
-
-<!-- ── WHAT I DID ── -->
 <section class="cs-block wrap" style="padding-top:0">
   <div class="cs-cols">
-    <div class="label" data-reveal>What I did</div>
+    <div class="label" data-reveal>The ask</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <h3>From Pikabook to a sharper question</h3>
+      <p>
+        This grew out of Pikabook, where OCR and GPT could turn textbook photos into
+        learning material — useful, but often met with “Can’t I just use GPT for this?”
+        That pushed me toward a more specific, repeated use case parents already know:
+        tingxie prep every other week.
+      </p>
+      <p class="muted">
+        The real problem was not another learning platform. Parents were acting as
+        teacher, dictionary, audio player, test generator, and motivator — all at once.
+        The bet: upload this week’s list, get a teacher-like test instantly. Not “AI
+        turns anything into learning material,” but one weekly chore made easier.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-pull">
+  <div class="wrap">
+    <p class="quote" data-reveal>One reliable weekly tool — <span class="accent">not another learning platform.</span></p>
+    <div class="cs-stats">
+      <div class="stat" data-reveal>
+        <div class="big">Weekly</div>
+        <div class="cap">Recurring parent use case</div>
+      </div>
+      <div class="stat" data-reveal data-delay="1">
+        <div class="big">v1</div>
+        <div class="cap">Smallest useful version first</div>
+      </div>
+      <div class="stat" data-reveal data-delay="2">
+        <div class="big">June</div>
+        <div class="cap">Primary school pilot</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap">
+  <div class="cs-cols">
+    <div class="label" data-reveal>From idea to v1</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <h3>Minimum value, not minimum features</h3>
+      <p>
+        I kept v1 small — no accounts, curriculum, rewards, or dashboards. Just the
+        core weekly job: create a list, randomize the order, and play words like a real
+        tingxie test. Accuracy before magic. Fast launch for real feedback.
+      </p>
+      <p class="muted">
+        The minimum value was not “upload a list.” It was “my child can now practice
+        tingxie without me reading every word.”
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
+    <div class="label" data-reveal>What I built</div>
     <div data-reveal data-delay="1">
       <ol class="cs-list">
-        <li><span class="n">01</span><span>First key contribution or milestone.</span></li>
-        <li><span class="n">02</span><span>Second key contribution or milestone.</span></li>
-        <li><span class="n">03</span><span>Third key contribution or milestone.</span></li>
-        <li><span class="n">04</span><span>Fourth key contribution or milestone.</span></li>
+        <li><span class="n">01</span><span>List upload and automatic practice structure</span></li>
+        <li><span class="n">02</span><span>Randomized test mode with teacher-like audio playback</span></li>
+        <li><span class="n">03</span><span>Clear pinyin and pronunciation parents can trust</span></li>
+        <li><span class="n">04</span><span>Landing page and messaging focused on parent relief</span></li>
       </ol>
     </div>
   </div>
 </section>
 
-<!-- ── PULL QUOTE / STATS ── -->
-<section class="cs-pull">
-  <div class="wrap">
-    <p class="quote" data-reveal>A short punchy takeaway — <span class="accent">what made this project matter.</span></p>
-    <div class="cs-stats">
-      <div class="stat" data-reveal>
-        <div class="big">—</div>
-        <div class="cap">Key metric or outcome</div>
-      </div>
-      <div class="stat" data-reveal data-delay="1">
-        <div class="big">—</div>
-        <div class="cap">Key metric or outcome</div>
-      </div>
-      <div class="stat" data-reveal data-delay="2">
-        <div class="big">—</div>
-        <div class="cap">Key metric or outcome</div>
-      </div>
-    </div>
-    <div style="margin-top: clamp(40px,6vw,72px)" data-reveal>
-      <div style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px">Stack</div>
-      <p class="muted" style="font-size:clamp(17px,1.8vw,21px);max-width:60ch;margin:0;line-height:1.5">
-        Tool · Tool · Tool · Tool
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
+    <div class="label" data-reveal>What I learned</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <p>
+        A powerful feature is not the same as a sharp use case. Parents do not always
+        want a broad AI learning system — sometimes they want one painful job handled
+        well, especially when it already fits an existing routine.
+      </p>
+      <p class="muted">
+        No Worry Tingxie is moving toward a June pilot with primary school parents,
+        and conversations with partners and investors — not as a finished platform,
+        but as a focused v1 showing how AI supports real, recurring parent workflows.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ── GALLERY 2 ── -->
-<section class="cs-gallery wrap" style="padding-top:clamp(48px,7vw,90px)">
-  <div class="cs-feature" style="margin:0">
-    <div class="media">
-      <image-slot id="cs-g3" shape="rounded" radius="6" style="width:100%;height:100%" placeholder="Full-width detail image"></image-slot>
-    </div>
-  </div>
-</section>
-
-<!-- ── NEXT PROJECT ── -->
 <section class="cs-next wrap">
-  <a href="index.html#work">
+  <a href="waldorf.html">
     <div>
-      <div class="lbl">Back to work</div>
-      <div class="ttl">All projects</div>
+      <div class="lbl">Next project — 02</div>
+      <div class="ttl">Jeju Waldorf kindergarten</div>
     </div>
     <span class="arr">↗</span>
   </a>
@@ -132,6 +155,5 @@
 <div data-site-footer></div>
 
 <script type="module" src="assets/js/main.js"></script>
-<script src="assets/js/image-slot.js"></script>
 </body>
 </html>

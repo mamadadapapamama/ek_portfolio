@@ -42,3 +42,14 @@
   background: color-mix(in oklab, var(--paper) 90%, var(--accent));
   color: var(--ink);
 }
+
+.btn--accent {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: transparent;
+}
+
+.btn--accent:hover {
+  background: var(--accent-ink);
+  color: var(--paper);
+}
