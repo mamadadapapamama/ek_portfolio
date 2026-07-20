@@ -8,6 +8,154 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* Cap & center all case-study media on this page */
+    .pb-media {
+      width: 100%;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+    .pb-pair {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: clamp(34px, 5vw, 64px) 0;
+    }
+    .pb-pair__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(12px, 1.6vw, 22px);
+      width: min(520px, 100%);
+    }
+    .pb-pair__grid .media {
+      aspect-ratio: 3 / 4;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .pb-pair__grid .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    @media (max-width: 640px) {
+      .pb-pair__grid {
+        grid-template-columns: 1fr;
+        width: min(280px, 100%);
+      }
+    }
+
+    /* App workflow screenshots */
+    .pb-flow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(20px, 2.4vw, 32px) clamp(14px, 1.8vw, 24px);
+      max-width: 1100px;
+      margin: clamp(40px, 6vw, 72px) auto 0;
+    }
+    .pb-flow figure {
+      margin: 0;
+      width: min(200px, calc(25% - 18px));
+      min-width: 150px;
+      flex: 0 0 auto;
+    }
+    .pb-flow .media {
+      aspect-ratio: 9 / 19.5;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px oklch(0.2 0.02 60 / .12);
+    }
+    .pb-flow .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .pb-flow figcaption {
+      margin-top: 12px;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--ink-soft);
+      text-align: center;
+    }
+    .pb-flow figcaption .n {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    @media (max-width: 900px) {
+      .pb-flow figure {
+        width: min(180px, calc(33.333% - 14px));
+      }
+    }
+    @media (max-width: 640px) {
+      .pb-flow figure {
+        width: min(168px, calc(50% - 10px));
+      }
+    }
+
+    .pb-thread {
+      max-width: 420px;
+      margin: clamp(28px, 4vw, 40px) auto 0;
+    }
+    .pb-thread .media {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px oklch(0.2 0.02 60 / .1);
+    }
+    .pb-thread .media img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Top hero: copy left, image right */
+    .pb-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+    }
+    .pb-hero__media .media {
+      border-radius: 6px;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: auto;
+    }
+    .pb-hero__media .media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .pb-hero__media .media-cap {
+      position: static;
+      margin-top: 10px;
+      left: auto;
+      bottom: auto;
+      background: transparent;
+      padding: 0;
+      color: var(--ink-faint);
+    }
+    .pb-hero .cs-meta {
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 860px) {
+      .pb-hero {
+        grid-template-columns: 1fr;
+        gap: clamp(24px, 5vw, 36px);
+      }
+      .pb-hero__media {
+        max-width: 560px;
+        margin-inline: auto;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,28 +164,31 @@
 <main class="wrap" data-screen-label="Pikabook">
   <a class="cs-back" href="index.html#work"><span class="arr">←</span> All work</a>
 
-  <header class="cs-hero">
-    <span class="eyebrow" data-reveal>iOS · AI · Parent tool</span>
-    <h1 data-reveal data-delay="1">Pika<span class="it">book</span></h1>
-    <p class="deck" data-reveal data-delay="2">
-      AI-powered learning support, built from idea to release — helping
-      non-Chinese-speaking parents turn a photo of school material into something
-      their child can understand, hear, and practice.
-    </p>
+  <header class="cs-hero pb-hero">
+    <div class="pb-hero__copy">
+      <span class="eyebrow" data-reveal>iOS · AI · Parent tool</span>
+      <h1 data-reveal data-delay="1">Pika<span class="it">book</span></h1>
+      <p class="deck" data-reveal data-delay="2">
+        An iOS app that helps non-Chinese-native parents and students study their
+        books — turning printed pages into AI-powered interactive learning
+        material they can understand, hear, and practice.
+      </p>
+    </div>
+
+    <div class="pb-hero__media" data-reveal data-delay="1">
+      <div class="media">
+        <img src="assets/pikabook-hero.avif" alt="A Chinese storybook next to the Pikabook app showing the same page as line-by-line study material" />
+        <div class="media-cap">a book page, turned into study material</div>
+      </div>
+    </div>
 
     <div class="cs-meta" data-reveal data-delay="2">
       <div><div class="k">Role</div><div class="v">Founder, product, design &amp; build</div></div>
       <div><div class="k">Platform</div><div class="v">iOS</div></div>
       <div><div class="k">Year</div><div class="v">2025 — 2026</div></div>
-      <div><div class="k">Live</div><div class="v"><a href="https://pikabook.co" target="_blank" rel="noopener">pikabook.co ↗</a> · <a href="https://apps.apple.com/sg/app/pikabook/id6745157690/" target="_blank" rel="noopener">App Store ↗</a></div></div>
+      <div><div class="k">Live</div><div class="v"><a href="https://pikabook.co" target="_blank" rel="noopener">pikabook.co ↗</a> · <a href="https://apps.apple.com/sg/app/pikabook/id6745157690/" target="_blank" rel="noopener">App Store ↗</a> · <a href="https://app.notion.com/p/24002e13abd380c984d4c0582e788edd" target="_blank" rel="noopener">Wiki ↗</a></div></div>
     </div>
   </header>
-
-  <div class="cs-feature" data-reveal>
-    <div class="media">
-      <img src="assets/pikabook-app.png" alt="Pikabook app" />
-    </div>
-  </div>
 </main>
 
 <section class="cs-block wrap">
@@ -45,12 +196,26 @@
     <div class="label" data-reveal>Brief</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <p>
-        Pikabook helps non-Chinese-speaking parents and students go beyond the printed
-        page. With a photo of a worksheet, textbook page, or school handout, it generates
-        pinyin, translation, AI voice playback, and pronunciation feedback — turning
-        printed Chinese material into something parents and children can actually
-        understand, hear, and practice.
+        Pikabook takes book pages beyond the printed page. From a photo of a book
+        page or a school handout, it generates line-by-line explanations, pinyin,
+        audio clips, and flashcards for the words you don’t understand. And for the
+        sentences you want to practice further, it offers pronunciation assessment.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="pb-pair" data-reveal>
+    <div class="pb-pair__grid">
+      <div class="media">
+        <img src="assets/pikabook-homework.jpg" alt="A Chinese comprehension exercise from a preschool workbook" />
+        <div class="media-cap">what preschoolers are assigned as homework</div>
+      </div>
+      <div class="media">
+        <img src="assets/pikabook-son.jpg" alt="A child resting his head on the table next to his Chinese homework" />
+        <div class="media-cap">obviously, my son hates doing it</div>
+      </div>
     </div>
   </div>
 </section>
@@ -67,6 +232,13 @@
         was fragmented. I needed pinyin, translation, pronunciation, audio, and a way
         to save useful content in one flow.
       </p>
+      <p>
+        And it turned out it wasn’t only my problem. When I
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScoaY5Tpw14hQoE7AqI9Dp58B-CMMrPbt99Uh3_ZjGQSZ-REQ/viewform" target="_blank" rel="noopener">surveyed</a>
+        and interviewed other parents in the same situation, the picture was the same:
+        the current experience is fragmented — a dictionary app here, a translation
+        app there — and no single solution covers the whole flow.
+      </p>
       <p class="muted">
         The bet: AI could help — but only if wrapped in a useful workflow. The value was
         not “OCR plus translation.” It was moving from “I don’t understand this page” to
@@ -79,19 +251,55 @@
 <section class="cs-pull">
   <div class="wrap">
     <p class="quote" data-reveal>Not OCR plus translation — <span class="accent">a complete learning workflow.</span></p>
-    <div class="cs-stats">
-      <div class="stat" data-reveal>
-        <div class="big">10+</div>
-        <div class="cap">Major revamps to ship v1</div>
-      </div>
-      <div class="stat" data-reveal data-delay="1">
-        <div class="big">iOS</div>
-        <div class="cap">Released on App Store</div>
-      </div>
-      <div class="stat" data-reveal data-delay="2">
-        <div class="big">1</div>
-        <div class="cap">Idea to release, AI-assisted</div>
-      </div>
+    <div class="pb-flow" data-reveal>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-notes.png" alt="Pikabook study notes list showing saved notes from photographed book pages" />
+        </div>
+        <figcaption><span class="n">01</span>Save pages as study notes</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-study.png" alt="Study note with original book page and line-by-line Chinese, pinyin, and Korean translation" />
+        </div>
+        <figcaption><span class="n">02</span>Read line by line with audio</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-lookup.png" alt="Word lookup sheet for 上学 with meaning and add to flashcard button" />
+        </div>
+        <figcaption><span class="n">03</span>Tap a word to look it up</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-flashcards.png" alt="Flashcard showing the Chinese word 上学 with pinyin" />
+        </div>
+        <figcaption><span class="n">04</span>Review unknown words</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-practice-list.png" alt="Pronunciation practice session list with progress and scores" />
+        </div>
+        <figcaption><span class="n">05</span>Open pronunciation practice</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-practice-start.png" alt="Start pronunciation practice by choosing an existing note or entering new text" />
+        </div>
+        <figcaption><span class="n">06</span>Choose a note or new text</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-recording.png" alt="Pronunciation practice screen while recording is in progress" />
+        </div>
+        <figcaption><span class="n">07</span>Speak the sentence</figcaption>
+      </figure>
+      <figure>
+        <div class="media">
+          <img src="assets/pikabook-wf-assessment.png" alt="Pronunciation assessment with phoneme, tone, fluency, and completeness scores and per-character feedback" />
+        </div>
+        <figcaption><span class="n">08</span>See per-character feedback</figcaption>
+      </figure>
     </div>
     <div style="margin-top: clamp(40px,6vw,72px)" data-reveal>
       <div style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px">Stack</div>
@@ -114,12 +322,29 @@
         down, checking implementation quality, enforcing structure, and repeatedly cleaning
         up architecture around state management, caching, and feature boundaries.
       </p>
-      <p class="muted">
-        Later I collaborated with a developer to improve the product further. That raised
-        an important question: when a designer can prototype, specify, build, and ship
-        with AI, what kind of developer collaboration is still needed? Not “no developers”
-        — but a shift. Developers become most valuable for architecture, reliability,
-        scalability, security, and production-level judgment — not screen-by-screen
+      <p>
+        I kept an unfiltered build log on
+        <a href="https://www.threads.com/@mamadadapapamama" target="_blank" rel="noopener">Threads ↗</a>
+        while building and refactoring — the raw feelings behind this process. The morning
+        Pikabook went live on the App Store, I woke up to the listing and posted in pure
+        excitement. It was my first time shipping an app to a marketplace. It still felt
+        unfinished — but it was real, and for a moment I just wanted to enjoy the small
+        win with a cup of coffee.
+      </p>
+      <figure class="pb-thread">
+        <div class="media">
+          <img src="assets/pikabook-threads-launch.png" alt="Threads post celebrating Pikabook going live on the App Store" />
+        </div>
+      </figure>
+      <p class="muted" style="margin-top:clamp(28px,4vw,40px)">
+        Later I collaborated with a developer to improve the product further. With today’s
+        AI models, almost everything feels possible at this product’s scale. Back then,
+        though, I hit a wall that endless refactoring and reading the codebase with limited
+        engineering knowledge couldn’t fix: subscriptions. My business model uses a
+        usage-based trial after subscription — and I couldn’t tell where it was breaking.
+        So I hired a developer to review the code from the ground up. That collaboration
+        clarified what AI-assisted building still needs from experienced engineers:
+        architecture, reliability, and production-level judgment — not screen-by-screen
         implementation.
       </p>
     </div>
@@ -131,23 +356,10 @@
     <div class="label" data-reveal>What I built</div>
     <div data-reveal data-delay="1">
       <ol class="cs-list">
-        <li><span class="n">01</span><span>Photo-based Chinese text extraction with pinyin, translation, and AI voice playback</span></li>
-        <li><span class="n">02</span><span>Pronunciation feedback, saved notes, and early flashcard / review flows</span></li>
-        <li><span class="n">03</span><span>Onboarding, usage limits, and subscription thinking</span></li>
+        <li><span class="n">01</span><span>Smart notes from a photo — line-by-line explanations with pinyin, translation, and AI voice playback</span></li>
+        <li><span class="n">02</span><span>Tap-to-look-up dictionary and flashcards built from the words you don’t know</span></li>
+        <li><span class="n">03</span><span>Pronunciation assessment on the sentences you want to practice further</span></li>
         <li><span class="n">04</span><span>Product direction, UX design, roadmap, release decisions, and developer handoff</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>Key decisions</div>
-    <div data-reveal data-delay="1">
-      <ol class="cs-list">
-        <li><span class="n">01</span><span><strong>Build around the real parent moment.</strong> A parent sitting with a child and a printed Chinese page — the flow had to be practical, fast, and forgiving, not a full curriculum platform.</span></li>
-        <li><span class="n">02</span><span><strong>Go beyond translation.</strong> A translated answer is useful once. I designed for pinyin, voice, pronunciation, saving, and review so the printed page could become reusable practice material.</span></li>
-        <li><span class="n">03</span><span><strong>Use AI to ship, but not blindly.</strong> AI accelerated building, but also created technical debt. I repeatedly enforced clearer architecture and feature boundaries to keep the app maintainable.</span></li>
       </ol>
     </div>
   </div>
@@ -158,19 +370,21 @@
     <div class="label" data-reveal>What I learned</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <p>
-        A powerful AI feature is not the same as a sharp product. OCR, translation,
-        pinyin, voice, and pronunciation feedback only matter when they support a real
-        user routine — which is what led me toward No Worry Tingxie’s narrower weekly use case.
-      </p>
-      <p>
-        AI can dramatically shorten the distance between idea and release, especially when
-        the product is defined clearly. But speed creates its own mess — without strong
-        product judgment and architectural discipline, AI-generated code becomes hard to maintain.
-      </p>
-      <p class="muted">
         Pikabook is where I moved from product designer to product builder: finding the use
         case, defining the workflow, using AI to ship quickly, collaborating with developers
         where it matters, and deciding what the first version should and should not be.
+        That shift meant wearing the product manager / product owner hat far more than before.
+        I spent more time in Cursor and Notion — roadmapping, writing the wiki, tracking bugs,
+        documenting use cases for myself and the developer — than in Figma. Toward the end,
+        I almost never opened Figma at all.
+      </p>
+      <p class="muted">
+        The harder lesson: customer reach matters more than I wanted to admit. A strong product
+        means little if it never reaches the people who need it. Right after launch, fast
+        marketing matters — and in Singapore, that was harder than expected. Sharing in
+        Facebook groups and local social communities often got treated as advertising; after
+        a few rejections and removals, I grew discouraged and under-promoted Pikabook.
+        Losing that early momentum is still what I regret most.
       </p>
     </div>
   </div>

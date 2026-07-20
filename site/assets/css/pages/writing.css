@@ -221,24 +221,8 @@
   padding: 16px 18px;
 }
 
-.wr-bookmark a,
-.wr-video a,
-.wr-embed a {
-  color: var(--accent-ink);
-  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
-}
-
 .wr-content hr {
   border: 0;
   border-top: 1px solid var(--line);
   margin: 2em 0;
-}
-
-.wr-content a {
-  color: var(--accent-ink);
-  border-bottom: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
-}
-
-.wr-content a:hover {
-  color: var(--accent);
 }

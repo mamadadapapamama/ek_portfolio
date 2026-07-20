@@ -24,6 +24,40 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 p { text-wrap: pretty; }
 
+/* Canonical text-link treatment — clearly marked as interactive */
+.link-inline,
+.cs-prose a,
+.cs-meta .v a,
+.wr-content a,
+.wr-bookmark a,
+.wr-video a,
+.wr-embed a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+  transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
+}
+
+.link-inline:hover,
+.cs-prose a:hover,
+.cs-meta .v a:hover,
+.wr-content a:hover,
+.wr-bookmark a:hover,
+.wr-video a:hover,
+.wr-embed a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* Compact utility links (CV, external shortcuts outside body prose) */
+a.link-inline {
+  font-family: var(--mono);
+  font-size: 13px;
+  padding-bottom: 1px;
+}
+
 .wrap,
 .nav__inner {
   max-width: var(--maxw);
@@ -96,13 +130,3 @@ h2.section-title { margin: 0; }
   max-width: 30ch;
   letter-spacing: -0.01em;
 }
-
-.link-inline {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--accent-ink);
-  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
-  padding-bottom: 1px;
-}
-
-.link-inline:hover { color: var(--accent); }
