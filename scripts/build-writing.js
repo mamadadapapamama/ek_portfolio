@@ -252,7 +252,16 @@ async function build() {
   }
 
   const notion = new Client({ auth: apiKey });
-  const posts = await fetchPosts(notion, databaseId);
+
+  let posts;
+  try {
+    posts = await fetchPosts(notion, databaseId);
+  } catch (error) {
+    console.warn("Notion writing build failed — deploying site without writing pages.");
+    console.warn(error?.message || error);
+    emptyWritingSite();
+    return;
+  }
 
   for (const post of posts) {
     const ctx = {
