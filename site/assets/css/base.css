@@ -27,6 +27,8 @@ p { text-wrap: pretty; }
 /* Canonical text-link treatment — clearly marked as interactive */
 .link-inline,
 .cs-prose a,
+.cs-prose p a,
+.cs-prose p.muted a,
 .cs-meta .v a,
 .wr-content a,
 .wr-bookmark a,
@@ -34,14 +36,18 @@ p { text-wrap: pretty; }
 .wr-embed a {
   color: var(--accent-ink);
   text-decoration: underline;
-  text-decoration-color: color-mix(in oklab, var(--accent) 55%, transparent);
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 0.18em;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+  border-bottom: none;
   transition: color .2s var(--ease), text-decoration-color .2s var(--ease);
 }
 
 .link-inline:hover,
 .cs-prose a:hover,
+.cs-prose p a:hover,
+.cs-prose p.muted a:hover,
 .cs-meta .v a:hover,
 .wr-content a:hover,
 .wr-bookmark a:hover,

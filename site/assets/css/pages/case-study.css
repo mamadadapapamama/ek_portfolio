@@ -53,6 +53,24 @@
 .cs-prose p { font-size: clamp(18px, 1.9vw, 22px); line-height: 1.6; color: var(--ink); margin: 0 0 1.1em; max-width: 56ch; }
 .cs-prose p.muted { color: var(--ink-soft); }
 .cs-prose h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: -0.01em; margin: 0 0 18px; }
+.cs-prose a,
+.cs-prose p a,
+.cs-prose p.muted a,
+.cs-meta .v a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: none;
+}
+.cs-prose a:hover,
+.cs-prose p a:hover,
+.cs-prose p.muted a:hover,
+.cs-meta .v a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 
 /* bullets */
 .cs-list { list-style: none; padding: 0; margin: 14px 0 0; }
