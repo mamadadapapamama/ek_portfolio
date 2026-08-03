@@ -15,6 +15,35 @@
       max-width: 720px;
       margin-inline: auto;
     }
+    .pb-media--wide {
+      max-width: 1000px;
+    }
+    .pb-media .media {
+      border-radius: 6px;
+      overflow: hidden;
+      background: transparent;
+    }
+    .pb-media .media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .pb-media .media-cap {
+      position: static;
+      margin-top: 10px;
+      left: auto;
+      bottom: auto;
+      background: transparent;
+      padding: 0;
+      color: var(--ink-faint);
+    }
+    .pb-media-stack {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(32px, 5vw, 56px);
+      margin: clamp(34px, 5vw, 64px) 0;
+    }
     .pb-pair {
       display: flex;
       justify-content: center;
@@ -177,7 +206,7 @@
 
     <div class="pb-hero__media" data-reveal data-delay="1">
       <div class="media">
-        <img src="assets/pikabook-hero.avif" alt="A Chinese storybook next to the Pikabook app showing the same page as line-by-line study material" />
+        <img src="assets/pikabook-hero.jpg" alt="A Chinese storybook next to the Pikabook app showing the same page as line-by-line study material" />
         <div class="media-cap">a book page, turned into study material</div>
       </div>
     </div>
@@ -365,6 +394,23 @@
   </div>
 </section>
 
+<section class="wrap">
+  <div class="pb-media-stack">
+    <figure class="pb-media" data-reveal>
+      <div class="media">
+        <img src="assets/pikabook-data-structure.jpg" alt="Pikabook product data model showing user, notes, extracted text, and flashcards" />
+        <div class="media-cap">product data model · user → notes → extracted text → flashcards</div>
+      </div>
+    </figure>
+    <figure class="pb-media pb-media--wide" data-reveal>
+      <div class="media">
+        <img src="assets/pikabook-mvp-flow.jpg" alt="Pikabook MVP flow screenshots showing onboarding, upload, note detail, and flashcards" />
+        <div class="media-cap">MVP flow · onboarding, upload, note detail, flashcards</div>
+      </div>
+    </figure>
+  </div>
+</section>
+
 <section class="cs-block wrap" style="padding-top:0">
   <div class="cs-cols">
     <div class="label" data-reveal>What I learned</div>
@@ -393,10 +439,10 @@
 </section>
 
 <section class="cs-next wrap">
-  <a href="index.html#work">
+  <a href="noworrytingxie.html">
     <div>
-      <div class="lbl">Back to work</div>
-      <div class="ttl">All projects</div>
+      <div class="lbl">Next project — 02</div>
+      <div class="ttl">No Worry Tingxie</div>
     </div>
     <span class="arr">↗</span>
   </a>

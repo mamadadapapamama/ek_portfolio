@@ -54,19 +54,7 @@ html {
   }
 
   .hero__portrait {
-    max-width: none;
-    width: 100%;
-  }
-
-  .hero__frame {
-    min-height: clamp(260px, 68vw, 380px);
-  }
-
-  .hero__tag {
-    left: 12px;
-    bottom: 12px;
-    font-size: 10px;
-    padding: 5px 10px;
+    display: none;
   }
 
   .hero__actions {
@@ -350,7 +338,19 @@ html {
 @media (max-width: 767px) {
   .wrap,
   .nav__inner {
+    padding-left: 24px;
+    padding-right: 24px;
     padding-left: max(24px, env(safe-area-inset-left, 0px));
     padding-right: max(24px, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  .wrap,
+  .nav__inner {
+    padding-left: max(40px, 7vw);
+    padding-right: max(40px, 7vw);
+    padding-left: max(40px, 7vw, env(safe-area-inset-left, 0px));
+    padding-right: max(40px, 7vw, env(safe-area-inset-right, 0px));
   }
 }

@@ -31,7 +31,8 @@
 
 @media (min-width: 768px) {
   :root {
-    --gutter: clamp(48px, 6vw, 96px);
-    --pad-x: clamp(48px, 6vw, 96px);
+    /* Stronger mid-width gutters (tablet → small desktop) */
+    --gutter: clamp(40px, 7vw, 96px);
+    --pad-x: clamp(40px, 7vw, 96px);
   }
 }

@@ -9,3 +9,5 @@ site/.thumbnail
 site/writing.html
 site/writing/
 site/assets/writing/
+.vercel
+.env*

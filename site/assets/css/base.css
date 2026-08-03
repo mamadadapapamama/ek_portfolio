@@ -68,20 +68,31 @@ a.link-inline {
 .nav__inner {
   max-width: var(--maxw);
   margin-inline: auto;
-  /* literal fallback first — max(var()) is dropped if --gutter fails to load */
+  width: 100%;
+  box-sizing: border-box;
+  /* literal values — avoid nested max(clamp()) which some engines drop */
   padding-left: 24px;
   padding-right: 24px;
-  padding-left: max(24px, env(safe-area-inset-left, 0px));
-  padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
 
 @media (min-width: 768px) {
   .wrap,
   .nav__inner {
-    padding-left: clamp(48px, 6vw, 96px);
-    padding-right: clamp(48px, 6vw, 96px);
-    padding-left: max(clamp(48px, 6vw, 96px), env(safe-area-inset-left, 0px));
-    padding-right: max(clamp(48px, 6vw, 96px), env(safe-area-inset-right, 0px));
+    /* 7vw keeps clear side margin through ~768–1200 before maxw kicks in */
+    padding-left: max(40px, 7vw);
+    padding-right: max(40px, 7vw);
+    padding-left: max(40px, 7vw, env(safe-area-inset-left, 0px));
+    padding-right: max(40px, 7vw, env(safe-area-inset-right, 0px));
+  }
+}
+
+@supports not (padding: max(1px, 1px)) {
+  @media (min-width: 768px) {
+    .wrap,
+    .nav__inner {
+      padding-left: 56px;
+      padding-right: 56px;
+    }
   }
 }
 
