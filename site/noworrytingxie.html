@@ -33,8 +33,15 @@
   </header>
 
   <div class="cs-feature" data-reveal>
-    <div class="media">
-      <img src="assets/noworry-screenshot.png" alt="No Worry Tingxie landing page" />
+    <div class="cs-grid-2" style="max-width:900px;margin-inline:auto;align-items:stretch">
+      <div class="media" style="aspect-ratio:3/4;border-radius:6px">
+        <img src="assets/noworry-list-left.jpg" alt="A printed Chinese tingxie spelling list used for practice" style="width:100%;height:100%;object-fit:cover;object-position:center" />
+        <div class="media-cap">From the tingxie printout</div>
+      </div>
+      <div class="media" style="aspect-ratio:3/4;border-radius:6px">
+        <img src="assets/noworry-hero.jpg" alt="A child practicing Chinese vocabulary on No Worry Tingxie on a phone" style="width:100%;height:100%;object-fit:cover;object-position:center" />
+        <div class="media-cap">To interactive practice and mock tests</div>
+      </div>
     </div>
   </div>
 </main>
@@ -74,22 +81,57 @@
   </div>
 </section>
 
-<section class="cs-pull">
-  <div class="wrap">
-    <p class="quote" data-reveal>One reliable weekly tool — <span class="accent">not another learning platform.</span></p>
-    <div class="cs-stats">
-      <div class="stat" data-reveal>
-        <div class="big">Weekly</div>
-        <div class="cap">Recurring parent use case</div>
-      </div>
-      <div class="stat" data-reveal data-delay="1">
-        <div class="big">v1</div>
-        <div class="cap">Smallest useful version first</div>
-      </div>
-      <div class="stat" data-reveal data-delay="2">
-        <div class="big">June</div>
-        <div class="cap">Primary school pilot</div>
-      </div>
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
+    <div class="label" data-reveal>Stack</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <h3>Product and design</h3>
+      <p>
+        End-to-end product strategy, UX, interface design, content, and usability testing
+      </p>
+      <h3 style="margin-top:clamp(28px,4vw,40px)">Technology</h3>
+      <ol class="cs-list">
+        <li><span class="n">01</span><span>Flutter Web</span></li>
+        <li><span class="n">02</span><span>Supabase</span></li>
+        <li><span class="n">03</span><span>Structured LLM processing</span></li>
+        <li><span class="n">04</span><span>PostHog and Google Analytics</span></li>
+        <li><span class="n">05</span><span>Cursor, Claude, and Codex</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap">
+  <div class="label" data-reveal style="margin-bottom:clamp(18px,2.5vw,28px)">Flow</div>
+  <ol class="cs-flow" data-reveal>
+    <li>
+      <span class="n">01</span>
+      <span class="t">Parent uploads a photographed list</span>
+    </li>
+    <li>
+      <span class="n">02</span>
+      <span class="t">AI extracts words, pinyin, test type, and pronunciation</span>
+    </li>
+    <li>
+      <span class="n">03</span>
+      <span class="t">Parent reviews and corrects the result</span>
+    </li>
+    <li>
+      <span class="n">04</span>
+      <span class="t">Child learns or practices the words</span>
+    </li>
+    <li>
+      <span class="n">05</span>
+      <span class="t">Mock test randomizes the list and plays teacher-like prompts</span>
+    </li>
+    <li>
+      <span class="n">06</span>
+      <span class="t">Parent can reuse or share the list</span>
+    </li>
+  </ol>
+  <div class="cs-flow-media" data-reveal>
+    <div class="media" aria-label="Flow video placeholder">
+      <!-- Flow video goes here -->
     </div>
   </div>
 </section>
@@ -128,17 +170,99 @@
 
 <section class="cs-block wrap" style="padding-top:0">
   <div class="cs-cols">
+    <div class="label" data-reveal>What changed after launch</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <p>
+        Real-world use quickly revealed what v1 had missed. Based on feedback from
+        parents, I shipped three key improvements.
+      </p>
+      <h3>Supporting both Pinyin and Hanzi tests</h3>
+      <p>
+        A tingxie test can ask children to write either Hanyu Pinyin or Chinese
+        characters, but the first version treated every item in the same way.
+      </p>
+      <p>
+        I updated the upload flow to detect and label Pinyin test items separately.
+        The practice experience now reflects the expected answer format, including
+        exercises that ask children to select the correct Pinyin and tone.
+      </p>
+      <h3>Slower stroke-order playback</h3>
+      <p>
+        Parents told me the stroke-order animation moved too quickly for younger
+        children to follow. I added a slower playback option with longer pauses
+        between strokes, making it easier for children to practise at their own pace.
+      </p>
+      <h3>Better accuracy for longer sentences</h3>
+      <p>
+        The first version was optimised for Primary 1 lists, which usually contain
+        short words and phrases. It became less reliable for Primary 3 and above,
+        where tingxie lists often include longer and more complex sentences.
+      </p>
+      <p>
+        I refined the prompts and processing flow to handle higher-grade content
+        more accurately.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
+    <div class="label" data-reveal>Early signals</div>
+    <div data-reveal data-delay="1">
+      <div class="cs-prose">
+        <p>With no formal marketing campaign, No Worry Tingxie reached:</p>
+        <ol class="cs-list">
+          <li><span class="n">01</span><span><strong>39</strong> founding families</span></li>
+          <li><span class="n">02</span><span><strong>75%</strong> user retention</span></li>
+          <li><span class="n">03</span><span><strong>46</strong> tingxie lists created</span></li>
+        </ol>
+        <p class="muted" style="margin-top:clamp(24px,3vw,36px);font-style:italic;max-width:42ch">
+          “Wow, love it! It builds independence to self-learn and self-test too!”
+        </p>
+        <p class="muted" style="font-size:14px;margin-top:-0.4em">
+          — Feedback from a parent via WhatsApp
+        </p>
+        <p class="muted" style="margin-top:clamp(20px,2.5vw,28px);font-style:italic;max-width:42ch">
+          “Can we have noworryspelling too”
+        </p>
+        <p class="muted" style="font-size:14px;margin-top:-0.4em">
+          — Parent asking for an English spelling version
+        </p>
+      </div>
+      <div class="cs-grid-2" style="max-width:640px;margin-top:clamp(24px,3vw,36px);gap:clamp(12px,1.6vw,20px);align-items:start">
+        <figure style="margin:0">
+          <div class="media" style="aspect-ratio:auto;height:auto;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px oklch(0.2 0.02 60 / .1);background:transparent">
+            <img src="assets/noworry-signal-whatsapp.jpg" alt="WhatsApp message from a parent: Wow love it! Builds independence to self learn and self test too!" style="width:100%;height:auto;display:block" />
+          </div>
+        </figure>
+        <figure style="margin:0">
+          <div class="media" style="aspect-ratio:auto;height:auto;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px oklch(0.2 0.02 60 / .1);background:transparent">
+            <img src="assets/noworry-signal-spelling.jpg" alt="Message from a parent: Can we have noworryspelling too" style="width:100%;height:auto;display:block" />
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
     <div class="label" data-reveal>What I learned</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <p>
-        A powerful feature is not the same as a sharp use case. Parents do not always
-        want a broad AI learning system — sometimes they want one painful job handled
-        well, especially when it already fits an existing routine.
+        A powerful feature is not the same as a sharp use case.
+      </p>
+      <p>
+        Parents do not necessarily want a broad AI learning platform. Sometimes, they
+        simply want one frustrating, recurring task handled exceptionally well—especially
+        when the solution fits naturally into a routine they already have.
       </p>
       <p class="muted">
-        No Worry Tingxie is moving toward a June pilot with primary school parents,
-        and conversations with partners and investors — not as a finished platform,
-        but as a focused v1 showing how AI supports real, recurring parent workflows.
+        No Worry Tingxie progressed into a pilot with primary-school families, alongside
+        early conversations with potential partners and investors. It was not presented
+        as a finished learning platform, but as a focused v1 demonstrating how AI can
+        support a real and repeated parent workflow.
       </p>
     </div>
   </div>
