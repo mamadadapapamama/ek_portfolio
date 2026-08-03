@@ -12,7 +12,7 @@ function mailtoHref(email = CONTACT_EMAIL) {
 export function renderNav({ root = "", workHref = "index.html#work" } = {}) {
   return `
 <nav class="nav" aria-label="Primary">
-  <div class="nav__inner">
+      <div class="nav__inner wrap">
     <a class="nav__brand" href="${assetPath("index.html", root)}">
       <img class="nav__logo" src="${assetPath("assets/ek_favicon.png", root)}" alt="EK" width="36" height="36" />
     </a>

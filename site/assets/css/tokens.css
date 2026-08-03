@@ -31,8 +31,16 @@
 
 @media (min-width: 768px) {
   :root {
-    /* Stronger mid-width gutters (tablet → small desktop) */
-    --gutter: clamp(40px, 7vw, 96px);
-    --pad-x: clamp(40px, 7vw, 96px);
+    /* Mid widths: scale with viewport, but keep a modest cap */
+    --gutter: clamp(32px, 5vw, 64px);
+    --pad-x: clamp(32px, 5vw, 64px);
+  }
+}
+
+@media (min-width: 1240px) {
+  :root {
+    /* Once .wrap hits max-width, use a fixed inset so nav matches page edges */
+    --gutter: 48px;
+    --pad-x: 48px;
   }
 }

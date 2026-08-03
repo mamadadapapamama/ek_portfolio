@@ -70,29 +70,19 @@ a.link-inline {
   margin-inline: auto;
   width: 100%;
   box-sizing: border-box;
-  /* literal values — avoid nested max(clamp()) which some engines drop */
   padding-left: 24px;
   padding-right: 24px;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
 }
 
 @media (min-width: 768px) {
   .wrap,
   .nav__inner {
-    /* 7vw keeps clear side margin through ~768–1200 before maxw kicks in */
-    padding-left: max(40px, 7vw);
-    padding-right: max(40px, 7vw);
-    padding-left: max(40px, 7vw, env(safe-area-inset-left, 0px));
-    padding-right: max(40px, 7vw, env(safe-area-inset-right, 0px));
-  }
-}
-
-@supports not (padding: max(1px, 1px)) {
-  @media (min-width: 768px) {
-    .wrap,
-    .nav__inner {
-      padding-left: 56px;
-      padding-right: 56px;
-    }
+    padding-left: max(32px, 5vw);
+    padding-right: max(32px, 5vw);
+    padding-left: var(--pad-x);
+    padding-right: var(--pad-x);
   }
 }
 

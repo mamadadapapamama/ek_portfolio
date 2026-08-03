@@ -334,7 +334,7 @@ html {
   }
 }
 
-/* Page gutter guarantee — literal values, no var() in max() */
+/* Page gutter guarantee — keep .wrap and .nav__inner in sync */
 @media (max-width: 767px) {
   .wrap,
   .nav__inner {
@@ -345,12 +345,20 @@ html {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1240px) {
+@media (min-width: 768px) and (max-width: 1239px) {
   .wrap,
   .nav__inner {
-    padding-left: max(40px, 7vw);
-    padding-right: max(40px, 7vw);
-    padding-left: max(40px, 7vw, env(safe-area-inset-left, 0px));
-    padding-right: max(40px, 7vw, env(safe-area-inset-right, 0px));
+    padding-left: max(32px, 5vw);
+    padding-right: max(32px, 5vw);
+    padding-left: max(32px, 5vw, env(safe-area-inset-left, 0px));
+    padding-right: max(32px, 5vw, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 1240px) {
+  .wrap,
+  .nav__inner {
+    padding-left: 48px;
+    padding-right: 48px;
   }
 }
