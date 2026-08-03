@@ -5,9 +5,12 @@ function assetPath(path, root) {
   return `${root}${path}`;
 }
 
-function mailtoHref(email = CONTACT_EMAIL) {
-  return `mailto:${email}`;
+/** Gmail compose — mailto often does nothing when no desktop mail app is set. */
+function emailHref(email = CONTACT_EMAIL) {
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
 }
+
+const EMAIL_LINK_ATTRS = `href="${emailHref()}" target="_blank" rel="noopener"`;
 
 export function renderNav({ root = "", workHref = "index.html#work" } = {}) {
   return `
@@ -19,7 +22,7 @@ export function renderNav({ root = "", workHref = "index.html#work" } = {}) {
     <div class="nav__links">
       <a href="${workHref}">Work</a>
       <a href="${assetPath("writing.html", root)}">Writing</a>
-      <a href="${mailtoHref()}" class="nav__cta">Contact</a>
+      <a ${EMAIL_LINK_ATTRS} class="nav__cta">Contact</a>
     </div>
   </div>
 </nav>`;
@@ -30,11 +33,11 @@ export function renderFooter({ root = "", variant = "default" } = {}) {
     return `
 <footer class="foot">
   <div class="wrap">
-    <p class="foot__big"><a href="${mailtoHref()}">Let's make it<br />real <span class="arr">↗</span></a></p>
+    <p class="foot__big"><a ${EMAIL_LINK_ATTRS}>Let's make it<br />real <span class="arr">↗</span></a></p>
     <div class="foot__meta">
       <span>© <span data-year></span> Eunkyung Kim</span>
       <div class="foot__social">
-        <a href="${mailtoHref()}">Email</a>
+        <a ${EMAIL_LINK_ATTRS}>Email</a>
         <a href="${LINKEDIN_URL}" target="_blank" rel="noopener">LinkedIn</a>
         <a href="${assetPath("writing.html", root)}">Writing</a>
         <a href="${assetPath("index.html#work", root)}">Work</a>
@@ -49,15 +52,15 @@ export function renderFooter({ root = "", variant = "default" } = {}) {
   <div class="wrap">
     <span class="eyebrow foot__eyebrow" data-reveal>Want to build something?</span>
     <p class="foot__big" data-reveal data-delay="1">
-      <a href="${mailtoHref()}">Let's make it real together <span class="arr">↗</span></a>
+      <a ${EMAIL_LINK_ATTRS}>Let's make it real together <span class="arr">↗</span></a>
     </p>
     <div class="foot__cta" data-reveal data-delay="2">
-      <a class="btn btn--accent" href="${mailtoHref()}">Send me an email <span class="arr">↗</span></a>
+      <a class="btn btn--accent" ${EMAIL_LINK_ATTRS}>Send me an email <span class="arr">↗</span></a>
     </div>
     <div class="foot__meta">
       <span>© <span data-year></span> Eunkyung (EK) Kim</span>
       <div class="foot__social">
-        <a href="${mailtoHref()}">Email</a>
+        <a ${EMAIL_LINK_ATTRS}>Email</a>
         <a href="${LINKEDIN_URL}" target="_blank" rel="noopener">LinkedIn</a>
         <a href="${assetPath("writing.html", root)}">Writing</a>
       </div>

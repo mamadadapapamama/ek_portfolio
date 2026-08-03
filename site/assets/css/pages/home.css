@@ -37,7 +37,7 @@
   flex-direction: column;
 }
 
-.hero__sub { margin-top: clamp(30px, 4vw, 52px); }
+.hero__sub { margin-top: clamp(8px, 1.2vw, 14px); }
 
 @media (min-width: 768px) {
   .hero .display {
