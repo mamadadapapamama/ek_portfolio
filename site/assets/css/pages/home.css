@@ -241,3 +241,20 @@
   .kit__grid { grid-template-columns: 1fr; }
 }
 
+
+/* Designing across markets */
+.markets { padding-top: clamp(24px, 4vw, 48px); }
+.markets__grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-top: 1px solid var(--line, rgba(0,0,0,.12)); }
+.markets__cell { padding: clamp(18px,2.4vw,28px) clamp(14px,2vw,24px) clamp(18px,2.4vw,28px) 0; border-bottom: 1px solid var(--line, rgba(0,0,0,.12)); }
+.markets__where { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.markets__cell p { margin: 10px 0 8px; font-size: clamp(16px,1.5vw,18px); line-height: 1.45; max-width: 30ch; }
+.markets__co { font-size: 13px; color: var(--ink-faint); }
+
+/* Leadership */
+.lead { padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(24px, 4vw, 48px); }
+.lead__grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: clamp(14px,1.8vw,22px); }
+.lead__cell { padding: clamp(20px,2.4vw,28px); border: 1px solid var(--line, rgba(0,0,0,.12)); border-radius: 10px; }
+.lead__cell h4 { margin: 0 0 10px; font-family: var(--serif); font-weight: 400; font-size: clamp(20px,1.9vw,24px); }
+.lead__cell p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); }
+@media (max-width: 900px) { .markets__grid, .lead__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .markets__grid, .lead__grid { grid-template-columns: 1fr; } }

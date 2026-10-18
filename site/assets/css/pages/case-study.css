@@ -164,3 +164,34 @@
 .cs-next a:hover .ttl { color: var(--accent); }
 .cs-next .arr { font-family: var(--serif); font-size: clamp(34px, 6vw, 70px); color: var(--accent); transition: transform .35s var(--ease); }
 .cs-next a:hover .arr { transform: translate(8px, -8px); }
+
+/* Split hero: copy left, main product visual right */
+.cs-hero--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+.cs-hero--split h1 { font-size: clamp(44px, 6.4vw, 96px); }
+.cs-hero--split .cs-meta { grid-column: 1 / -1; }
+.cs-hero__visual { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper-2); }
+.cs-hero__visual > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-hero__visual .mock-stage { height: 100%; }
+.cs-hero__visual .mock-phone { width: 34%; max-width: 190px; }
+.cs-hero__visual .mock-phones { display: flex; gap: 6%; justify-content: center; align-items: center; width: 100%; height: 100%; position: relative; z-index: 2; }
+.cs-hero__visual .mock-phones .mock-phone:nth-child(2) { transform: translateY(8%); }
+.cs-hero__visual .mock-browser { width: 86%; }
+.cs-hero__cap { font-size: 13px; color: var(--ink-faint); margin-top: 10px; }
+@media (max-width: 860px) {
+  .cs-hero--split { grid-template-columns: 1fr; gap: clamp(24px, 5vw, 36px); }
+  .cs-hero--split h1 { font-size: clamp(44px, 12vw, 72px); }
+}
+
+/* 30-second summary */
+.cs-summary { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; border: 1px solid var(--line, rgba(0,0,0,.12)); border-radius: 10px; background: var(--paper-2); margin: clamp(8px,2vw,20px) 0 clamp(36px,5vw,64px); }
+.cs-summary > div { padding: clamp(18px,2.2vw,26px); border-right: 1px solid var(--line, rgba(0,0,0,.12)); }
+.cs-summary > div:last-child { border-right: 0; }
+.cs-summary .k { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.cs-summary .v { font-size: 15.5px; line-height: 1.5; }
+@media (max-width: 900px) { .cs-summary { grid-template-columns: 1fr 1fr; } .cs-summary > div:nth-child(2) { border-right: 0; } .cs-summary > div:nth-child(-n+2) { border-bottom: 1px solid var(--line, rgba(0,0,0,.12)); } }
+@media (max-width: 560px) { .cs-summary { grid-template-columns: 1fr; } .cs-summary > div { border-right: 0; border-bottom: 1px solid var(--line, rgba(0,0,0,.12)); } .cs-summary > div:last-child { border-bottom: 0; } }

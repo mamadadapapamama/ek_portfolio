@@ -21,7 +21,7 @@ export function renderNav({ root = "", workHref = "index.html#work" } = {}) {
     </a>
     <div class="nav__links">
       <a href="${workHref}">Work</a>
-      <a href="${assetPath("writing.html", root)}">Writing</a>
+      <a href="${assetPath("about.html", root)}">About</a>
       <a ${EMAIL_LINK_ATTRS} class="nav__cta">Contact</a>
     </div>
   </div>
@@ -50,9 +50,9 @@ export function renderFooter({ root = "", variant = "default" } = {}) {
   return `
 <footer class="foot" id="contact">
   <div class="wrap">
-    <span class="eyebrow foot__eyebrow" data-reveal>Want to build something?</span>
+    <span class="eyebrow foot__eyebrow" data-reveal>Hiring a Staff designer?</span>
     <p class="foot__big" data-reveal data-delay="1">
-      <a ${EMAIL_LINK_ATTRS}>Let's make it real together <span class="arr">↗</span></a>
+      <a ${EMAIL_LINK_ATTRS}>Let's talk <span class="arr">↗</span></a>
     </p>
     <div class="foot__cta" data-reveal data-delay="2">
       <a class="btn btn--accent" ${EMAIL_LINK_ATTRS}>Send me an email <span class="arr">↗</span></a>
@@ -62,9 +62,9 @@ export function renderFooter({ root = "", variant = "default" } = {}) {
       <div class="foot__social">
         <a ${EMAIL_LINK_ATTRS}>Email</a>
         <a href="${LINKEDIN_URL}" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="${assetPath("writing.html", root)}">Writing</a>
+        <a href="${assetPath("about.html", root)}">About</a>
       </div>
-      <span>Idea → v1</span>
+      <span>Singapore</span>
     </div>
   </div>
 </footer>`;

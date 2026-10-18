@@ -11,3 +11,4 @@ site/writing/
 site/assets/writing/
 .vercel
 .env*
+_to_delete/
