@@ -55,42 +55,42 @@
   <div class="cs-cols">
     <div class="label" data-reveal>Objective</div>
     <div class="cs-prose" data-reveal data-delay="1">
-      <h3>Help children prepare for tingxie on their own</h3>
+      <h3>Start with the test every family already has</h3>
       <p>
         In Singapore, primary schoolers who take Chinese as their mother tongue sit
         tingxie — a Chinese spelling test — at least every other week. The teacher reads
-        each word aloud and children write it in Hanzi or Pinyin.
+        each word aloud, and children write it in Hanzi or Pinyin.
       </p>
-      <p>
-        I expected preparing for it to be hard only for non-Chinese families like mine.
-        It wasn't. Even Chinese-Singaporean parents struggle: most work full time, there's
-        little time left to sit down and study together, and checking whether their own
-        Chinese is right adds stress of its own. Many hand it to a tuition centre.
-      </p>
-      <p class="muted">
-        The goal: let a child prepare for this week's tingxie on their own — learn the
-        words, test themselves like the real thing, and see what to revise — without a
-        parent reading every word.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>Why tingxie</div>
-    <div class="cs-prose" data-reveal data-delay="1">
-      <h3>From a broad AI app to one weekly ritual</h3>
+      <figure style="margin:clamp(20px,3vw,32px) 0 clamp(8px,1vw,12px);max-width:520px">
+        <img src="assets/noworry-real-list.jpg" alt="A real tingxie list from school: Part 1 words to write in Pinyin, Part 2 words and a sentence to write in Hanzi" loading="lazy" style="width:100%;height:auto;display:block;border-radius:8px" />
+        <figcaption style="font-size:13px;color:var(--ink-faint);margin-top:10px">A real list my son brought home · Part 1 is written in Pinyin, Part 2 in Hanzi</figcaption>
+      </figure>
+      <h3 style="margin-top:clamp(32px,4vw,48px)">How it started</h3>
       <p>
         Before this I built <a href="pikabook.html">Pikabook</a>, which turned any textbook
-        photo into study material. It worked, but parents kept asking, “Can't I just use
-        GPT for this?” — and similar apps were out-advertising me. The problem was real; the
-        use case was too broad.
+        photo into study material. It worked, but the use case was too broad: parents asked,
+        “Can't I just use GPT for this?”, and they had no reason to come back. I wanted a
+        product with a sharper need and retention built in.
+      </p>
+      <p>
+        The answer was at my own dinner table. My son brings home a tingxie list every other
+        week, and I was the one reading the words aloud and checking his strokes. As a
+        non-native speaker, I kept having to look up whether I was even pronouncing each word
+        right, and what it meant. A test that
+        returns on a fixed schedule is a need families can't ignore — and a natural reason to
+        come back.
+      </p>
+      <h3 style="margin-top:clamp(32px,4vw,48px)">It isn't only my problem</h3>
+      <p>
+        I assumed it was hard mainly for non-Chinese families like mine. It wasn't. Even
+        Chinese-Singaporean parents struggle: most work full time, there's little time left to
+        sit down and study together, and checking whether their own Chinese is right adds
+        stress of its own. Many hand it to a tuition centre.
       </p>
       <p class="muted">
-        Tingxie is the opposite: specific, recurring and already in every family's calendar.
-        A test that comes back every other week is a built-in reason to return — so I made it
-        the main flow.
+        The goal: help children learn the Chinese words they actually need, on their own —
+        starting with this week's tingxie list, and growing into a vocabulary builder for
+        Chinese learners.
       </p>
     </div>
   </div>
@@ -98,10 +98,11 @@
 
 <section class="cs-block wrap" id="app">
   <div class="cs-cols">
-    <div class="label" data-reveal>The solution</div>
+    <div class="label" data-reveal>What's built so far</div>
     <div class="cs-prose" data-reveal data-delay="1">
-      <h3>One loop: learn, practise, test, revise</h3>
-      <p>Every screen serves the weekly tingxie routine — from a photo of the school list to a test the child can take alone.</p>
+      <h3>v1.1: one loop for the weekly test</h3>
+      <p>What's live today covers the weekly tingxie routine — from a photo of the school list to a test the child can take alone: learn, practise, test, revise.</p>
+      <p class="muted">It's a first loop, not the finished product. Next on the <a href="#roadmap">roadmap</a>: a clearer view of progress for parents who don't read Chinese, then a vocabulary builder that goes beyond Singapore primary.</p>
     </div>
   </div>
   <div class="tx-steps" data-reveal>
@@ -291,7 +292,7 @@
       </p>
     </div>
   </div>
-  <div class="tx-road" data-reveal>
+  <div class="tx-road" id="roadmap" data-reveal>
     <div class="tx-road__stage"><span class="tx-road__q">Q4 2026</span><h4>The best tingxie tool for Singapore primary schools</h4><p>Nail the weekly loop for P1–P6 families: accurate lists, writing tests, clear results.</p></div>
     <div class="tx-road__stage"><span class="tx-road__q">Q1 2027</span><h4>Better for parents who don't speak Chinese</h4><p>Help every parent see progress and know what to revise, whatever their own Chinese.</p></div>
     <div class="tx-road__stage"><span class="tx-road__q">Q2 2027</span><h4>Beyond Singapore primary</h4><p>Extend the vocabulary engine to new learners and new exams.</p></div>
