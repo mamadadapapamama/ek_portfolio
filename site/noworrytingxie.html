@@ -7,7 +7,7 @@
 <link rel="icon" href="assets/ek_favicon.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="assets/css/main.css?v=20261018d" />
+  <link rel="stylesheet" href="assets/css/main.css?v=20261018e" />
 </head>
 <body>
 
@@ -49,39 +49,56 @@
   </div>
 
 
-  <div class="cs-feature" data-reveal>
-    <div class="cs-grid-2" style="max-width:900px;margin-inline:auto;align-items:stretch">
-      <div class="media" style="aspect-ratio:3/4;border-radius:6px">
-        <img src="assets/noworry-list-left.jpg" alt="A printed Chinese tingxie spelling list used for practice" style="width:100%;height:100%;object-fit:cover;object-position:center" />
-        <div class="media-cap">From the tingxie printout</div>
-      </div>
-      <div class="media" style="aspect-ratio:3/4;border-radius:6px">
-        <img src="assets/noworry-hero.jpg" alt="A child practicing Chinese vocabulary on No Worry Tingxie on a phone" style="width:100%;height:100%;object-fit:cover;object-position:center" />
-        <div class="media-cap">To interactive practice and mock tests</div>
-      </div>
-    </div>
-  </div>
-</main>
+  </main>
 
 <section class="cs-block wrap">
   <div class="cs-cols">
-    <div class="label" data-reveal>Key decisions</div>
-    <div data-reveal data-delay="1">
-      <ol class="cs-list">
-        <li><span class="n">01</span><span><strong>Narrow the bet.</strong> I stopped growing Pikabook, a broad AI reading app, and focused on one recurring job parents already do every week.</span></li>
-        <li><span class="n">02</span><span><strong>Design for the local ritual.</strong> In Singapore, primary schoolers who take Chinese as their mother tongue prepare for tingxie — a Chinese spelling test — at least every other week. That recurring test is a natural retention driver for a Chinese learning tool, so I made it the main flow.</span></li>
-        <li><span class="n">03</span><span><strong>Keep a parent in the loop.</strong> AI extracts the list, but parents review it before their child practises. Trust in accuracy matters more than magic.</span></li>
-        <li><span class="n">04</span><span><strong>Beta on the web, learn fast.</strong> I launched a web beta in June with no marketing. Families started using it on their own, and I interviewed seven parents to understand why — and what was missing.</span></li>
-        <li><span class="n">05</span><span><strong>Go native for the job, not the channel.</strong> Singapore parents want independent study, and that loop only closes when a child tests themselves, sees the result and revises what they missed. Tingxie is a writing test, so in September I moved to iOS for in-app stroke practice and tests with a finger or Apple Pencil — something the web couldn't do well.</span></li>
-        <li><span class="n">06</span><span><strong>Focus where the gap meets the need.</strong> I mapped the language and vocabulary app market, interviewed parents, and focused where an empty space in the market met the needs parents repeated most. That became a revised vision and a roadmap through Q2 2027. v1.2 ships next.</span></li>
-      </ol>
+    <div class="label" data-reveal>Objective</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <h3>Help children prepare for tingxie on their own</h3>
+      <p>
+        In Singapore, primary schoolers who take Chinese as their mother tongue sit
+        tingxie — a Chinese spelling test — at least every other week. The teacher reads
+        each word aloud and children write it in Hanzi or Pinyin.
+      </p>
+      <p>
+        I expected preparing for it to be hard only for non-Chinese families like mine.
+        It wasn't. Even Chinese-Singaporean parents struggle: most work full time, there's
+        little time left to sit down and study together, and checking whether their own
+        Chinese is right adds stress of its own. Many hand it to a tuition centre.
+      </p>
+      <p class="muted">
+        The goal: let a child prepare for this week's tingxie on their own — learn the
+        words, test themselves like the real thing, and see what to revise — without a
+        parent reading every word.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-block wrap" style="padding-top:0">
+  <div class="cs-cols">
+    <div class="label" data-reveal>Why tingxie</div>
+    <div class="cs-prose" data-reveal data-delay="1">
+      <h3>From a broad AI app to one weekly ritual</h3>
+      <p>
+        Before this I built <a href="pikabook.html">Pikabook</a>, which turned any textbook
+        photo into study material. It worked, but parents kept asking, “Can't I just use
+        GPT for this?” — and similar apps were out-advertising me. The problem was real; the
+        use case was too broad.
+      </p>
+      <p class="muted">
+        Tingxie is the opposite: specific, recurring and already in every family's calendar.
+        A test that comes back every other week is a built-in reason to return — so I made it
+        the main flow.
+      </p>
     </div>
   </div>
 </section>
 
 <section class="cs-block wrap" id="app">
   <div class="cs-cols">
-    <div class="label" data-reveal>The app</div>
+    <div class="label" data-reveal>The solution</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <h3>One loop: learn, practise, test, revise</h3>
       <p>Every screen serves the weekly tingxie routine — from a photo of the school list to a test the child can take alone.</p>
@@ -121,68 +138,27 @@
   </div>
 </section>
 
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>Problem</div>
-    <div class="cs-prose" data-reveal data-delay="1">
-      <h3>Even Chinese-speaking parents struggle</h3>
-      <p>
-        I expected the problem to belong to non-Chinese families like mine. It didn't.
-        Even Chinese-Singaporean parents struggle to support their children's Chinese.
-        In most families both parents work, so there is little time left to sit down and
-        study together — and checking whether their own Chinese is right adds stress of
-        its own. Many end up handing it to a tuition centre or a private teacher.
-      </p>
-      <p>
-        No Worry Tingxie is an iOS and web app that gives that time back. It helps primary school parents
-        support their children’s Chinese spelling practice at home. Parents snap or
-        upload this week’s tingxie list, turn it into a practice set, and generate a
-        teacher-like audio test so their child can prepare independently.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>Why I narrowed</div>
-    <div class="cs-prose" data-reveal data-delay="1">
-      <h3>From Pikabook to a sharper question</h3>
-      <p>
-        This grew out of <a href="pikabook.html">Pikabook</a>, where OCR and GPT could turn textbook photos into
-        learning material — useful, but often met with “Can’t I just use GPT for this?”
-        That pushed me toward a more specific, repeated use case parents already know:
-        tingxie prep every other week.
-      </p>
-      <p>
-        Pikabook also taught me a harder lesson. Apps solving the same problem are now
-        advertising heavily — the problem was real, but I lost on distribution, not on
-        the product. With Tingxie I built sharing into the core flow from day one, so
-        parents could pass lists to each other.
-      </p>
-      <p class="muted">
-        The real problem was not another learning platform. Parents were acting as
-        teacher, dictionary, audio player, test generator, and motivator — all at once.
-        The bet: upload this week’s list, get a teacher-like test instantly. Not “AI
-        turns anything into learning material,” but one weekly chore made easier.
-      </p>
-    </div>
-  </div>
+<section class="tx-chapter wrap" data-reveal>
+  <span class="tx-chapter__n">01</span>
+  <h2>A web beta to learn fast</h2>
+  <span class="tx-chapter__when">June 2026</span>
 </section>
 
 <section class="cs-block wrap">
   <div class="cs-cols">
-    <div class="label" data-reveal>From idea to v1</div>
+    <div class="label" data-reveal>Web beta</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <h3>Minimum value, not minimum features</h3>
       <p>
-        I launched a small web beta in June 2026 — no accounts, curriculum, rewards, or dashboards. Just the
-        core weekly job: create a list, randomize the order, and play words like a real
-        tingxie test. Accuracy before magic. Fast launch for real feedback.
+        I launched a web beta in June 2026 with no accounts, curriculum, rewards or
+        dashboards — just the weekly job. A parent uploads a photo of the list, AI extracts the
+        words, pinyin and test type, the parent checks it, and the child practises with a
+        teacher-like audio test in random order.
       </p>
       <p class="muted">
-        The minimum value was not “upload a list.” It was “my child can now practice
-        tingxie without me reading every word.”
+        I kept a parent in the loop on purpose: accuracy matters more than magic. The minimum
+        value wasn't “upload a list”. It was “my child can practise tingxie without me
+        reading every word.”
       </p>
     </div>
   </div>
@@ -190,52 +166,14 @@
 
 <section class="cs-block wrap" style="padding-top:0">
   <div class="cs-cols">
-    <div class="label" data-reveal>What I built</div>
-    <div data-reveal data-delay="1">
-      <ol class="cs-list">
-        <li><span class="n">01</span><span>List upload and automatic practice structure</span></li>
-        <li><span class="n">02</span><span>Randomized test mode with teacher-like audio playback</span></li>
-        <li><span class="n">03</span><span>Clear pinyin and pronunciation parents can trust</span></li>
-        <li><span class="n">04</span><span>Landing page and messaging focused on parent relief</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>What changed after the beta</div>
+    <div class="label" data-reveal>What families taught me</div>
     <div class="cs-prose" data-reveal data-delay="1">
-      <p>
-        Real-world use quickly revealed what v1 had missed. Based on feedback from
-        parents, I shipped three key improvements.
-      </p>
-      <h3>Supporting both Pinyin and Hanzi tests</h3>
-      <p>
-        A tingxie test can ask children to write either Hanyu Pinyin or Chinese
-        characters, but the first version treated every item in the same way.
-      </p>
-      <p>
-        I updated the upload flow to detect and label Pinyin test items separately.
-        The practice experience now reflects the expected answer format, including
-        exercises that ask children to select the correct Pinyin and tone.
-      </p>
-      <h3>Slower stroke-order playback</h3>
-      <p>
-        Parents told me the stroke-order animation moved too quickly for younger
-        children to follow. I added a slower playback option with longer pauses
-        between strokes, making it easier for children to practise at their own pace.
-      </p>
-      <h3>Better accuracy for longer sentences</h3>
-      <p>
-        The first version was optimised for Primary 1 lists, which usually contain
-        short words and phrases. It became less reliable for Primary 3 and above,
-        where tingxie lists often include longer and more complex sentences.
-      </p>
-      <p>
-        I refined the prompts and processing flow to handle higher-grade content
-        more accurately.
-      </p>
+      <p>Real use quickly showed what v1 had missed. I shipped three fixes from parent feedback:</p>
+      <ol class="cs-list">
+        <li><span class="n">01</span><span><strong>Pinyin and Hanzi tests.</strong> Lists mix both answer types, so the upload flow now detects and labels each item, and practice matches the format.</span></li>
+        <li><span class="n">02</span><span><strong>Slower stroke order.</strong> Younger children couldn't follow the animation, so I added a slower mode with longer pauses.</span></li>
+        <li><span class="n">03</span><span><strong>Longer sentences.</strong> v1 was tuned for Primary 1. I reworked the prompts so lists from Primary 3 and up extract accurately.</span></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -286,9 +224,15 @@
   </div>
 </section>
 
+<section class="tx-chapter wrap" data-reveal>
+  <span class="tx-chapter__n">02</span>
+  <h2>Research: what to build, for whom</h2>
+  <span class="tx-chapter__when">After the beta</span>
+</section>
+
 <section class="cs-block wrap" id="strategy">
   <div class="cs-cols">
-    <div class="label" data-reveal>From signal to strategy</div>
+    <div class="label" data-reveal>Research</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <h3>Finding where the market gap and parent needs overlap</h3>
       <p>
@@ -354,9 +298,15 @@
   </div>
 </section>
 
+<section class="tx-chapter wrap" data-reveal>
+  <span class="tx-chapter__n">03</span>
+  <h2>iOS: closing the loop</h2>
+  <span class="tx-chapter__when">September 2026</span>
+</section>
+
 <section class="cs-block wrap" style="padding-top:0">
   <div class="cs-cols">
-    <div class="label" data-reveal>Web beta → iOS</div>
+    <div class="label" data-reveal>Going native</div>
     <div class="cs-prose" data-reveal data-delay="1">
       <h3>Closing the independent-study loop</h3>
       <p>
@@ -428,35 +378,21 @@
   </div>
 </section>
 
+<section class="tx-chapter wrap" data-reveal>
+  <span class="tx-chapter__n">04</span>
+  <h2>Results</h2>
+  <span class="tx-chapter__when">Today</span>
+</section>
+
 <section class="cs-block wrap">
   <div class="cs-cols">
     <div class="label" data-reveal>Where it is today</div>
     <div class="cs-prose" data-reveal data-delay="1">
-      <p>Four months after the web beta:</p>
       <ol class="cs-list">
-          <li><span class="n">01</span><span><strong>71</strong> families practising every week</span></li>
-          <li><span class="n">02</span><span><strong>iOS</strong> launched in September 2026 with stroke practice by finger or Apple Pencil — v1.2 shipping next</span></li>
-          <li><span class="n">03</span><span><strong>7</strong> parent interviews behind a roadmap through Q2 2027</span></li>
-        </ol>
-    </div>
-  </div>
-</section>
-
-<section class="cs-block wrap" style="padding-top:0">
-  <div class="cs-cols">
-    <div class="label" data-reveal>Stack</div>
-    <div class="cs-prose" data-reveal data-delay="1">
-      <h3>Product and design</h3>
-      <p>
-        End-to-end product strategy, UX, interface design, content, and usability testing
-      </p>
-      <h3 style="margin-top:clamp(28px,4vw,40px)">Technology</h3>
-      <ol class="cs-list">
-        <li><span class="n">01</span><span>Flutter (iOS and web)</span></li>
-        <li><span class="n">02</span><span>Supabase</span></li>
-        <li><span class="n">03</span><span>Structured LLM processing</span></li>
-        <li><span class="n">04</span><span>PostHog and Google Analytics</span></li>
-        <li><span class="n">05</span><span>Cursor, Claude, and Codex</span></li>
+        <li><span class="n">01</span><span><strong>71</strong> families practising every week, with no marketing</span></li>
+        <li><span class="n">02</span><span><strong>75%</strong> month-one retention from the web beta</span></li>
+        <li><span class="n">03</span><span><strong>iOS</strong> live since September 2026; v1.2 shipping next</span></li>
+        <li><span class="n">04</span><span>A roadmap through <strong>Q2 2027</strong>, shaped by seven parent interviews</span></li>
       </ol>
     </div>
   </div>
@@ -466,19 +402,14 @@
   <div class="cs-cols">
     <div class="label" data-reveal>What I learned</div>
     <div class="cs-prose" data-reveal data-delay="1">
+      <h3>A powerful feature is not a sharp use case</h3>
       <p>
-        A powerful feature is not the same as a sharp use case.
-      </p>
-      <p>
-        Parents do not necessarily want a broad AI learning platform. Sometimes, they
-        simply want one frustrating, recurring task handled exceptionally well—especially
-        when the solution fits naturally into a routine they already have.
+        Parents didn't want another AI learning platform. They wanted one stressful,
+        recurring task handled really well, inside a routine they already have.
       </p>
       <p class="muted">
-        No Worry Tingxie progressed into a pilot with primary-school families, alongside
-        early conversations with potential partners and investors. It was not presented
-        as a finished learning platform, but as a focused v1 demonstrating how AI can
-        support a real and repeated parent workflow.
+        Built with Flutter (iOS and web), Supabase and structured LLM processing, measured
+        with PostHog — and designed, coded and shipped by me with Cursor, Claude and Codex.
       </p>
     </div>
   </div>

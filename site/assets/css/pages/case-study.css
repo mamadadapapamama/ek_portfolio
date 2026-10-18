@@ -217,3 +217,10 @@
 @media (max-width: 700px) { .tx-road { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--accent); } .tx-road__stage { padding: 0 0 22px 20px; } .tx-road__stage::before { top: 4px; left: -7px; } }
 .tx-step__phones--3 { gap: 6px; }
 .tx-step__phones--3 .tx-phone { flex-basis: 31%; }
+
+/* Story chapters */
+.tx-chapter { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 18px; padding-top: clamp(56px,8vw,112px); padding-bottom: 8px; border-bottom: 1px solid var(--line, rgba(0,0,0,.12)); }
+.tx-chapter__n { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.tx-chapter h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(30px,4vw,52px); letter-spacing: -0.01em; }
+.tx-chapter__when { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+@media (max-width: 640px) { .tx-chapter { grid-template-columns: 1fr; gap: 6px; } }
