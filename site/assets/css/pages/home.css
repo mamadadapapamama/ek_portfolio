@@ -265,3 +265,4 @@
 .markets__photos figcaption b { color: var(--accent); font-weight: 600; }
 .markets__cell p { margin: 8px 0 0; }
 @media (max-width: 900px) { .markets__photos { grid-template-columns: 1fr 1fr; } }
+.markets__grid--3 .markets__cell p { max-width: 34ch; }
