@@ -54,7 +54,24 @@ html {
   }
 
   .hero__portrait {
-    display: none;
+    display: block;
+    order: -1;
+    width: 100%;
+  }
+
+  .hero__frame {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero__frame img {
+    object-position: 50% 30%;
+  }
+
+  .hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .hero__actions {
