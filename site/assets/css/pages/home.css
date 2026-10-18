@@ -258,3 +258,10 @@
 .lead__cell p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); }
 @media (max-width: 900px) { .markets__grid, .lead__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .markets__grid, .lead__grid { grid-template-columns: 1fr; } }
+.markets__photos { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: clamp(10px,1.4vw,18px); margin-bottom: clamp(20px,3vw,32px); }
+.markets__photos figure { margin: 0; }
+.markets__photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; display: block; }
+.markets__photos figcaption { font-size: 13px; color: var(--ink-faint); margin-top: 8px; line-height: 1.4; }
+.markets__photos figcaption b { color: var(--accent); font-weight: 600; }
+.markets__cell p { margin: 8px 0 0; }
+@media (max-width: 900px) { .markets__photos { grid-template-columns: 1fr 1fr; } }
