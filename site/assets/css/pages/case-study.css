@@ -215,3 +215,5 @@
 .tx-road__stage h4 { margin: 8px 0 6px; font-family: var(--serif); font-weight: 400; font-size: clamp(19px,1.8vw,23px); line-height: 1.25; }
 .tx-road__stage p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
 @media (max-width: 700px) { .tx-road { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--accent); } .tx-road__stage { padding: 0 0 22px 20px; } .tx-road__stage::before { top: 4px; left: -7px; } }
+.tx-step__phones--3 { gap: 6px; }
+.tx-step__phones--3 .tx-phone { flex-basis: 31%; }
